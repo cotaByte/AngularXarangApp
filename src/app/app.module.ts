@@ -12,6 +12,7 @@ import { JoinBandasComponent } from './bandas/join-bandas/join-bandas.component'
 import { LeaveBandasComponent } from './bandas/leave-bandas/leave-bandas.component';
 import { FormsModule, NgForm } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,9 @@ import { FormsModule, NgForm } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     FormsModule,
+
     RouterModule,
     HttpClientModule
   ],

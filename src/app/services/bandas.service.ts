@@ -1,3 +1,4 @@
+
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { URL } from 'src/app/app.constants';
@@ -13,6 +14,21 @@ import { URL } from 'src/app/app.constants';
  * - removeBanda(token)✅
  */
 
+
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import {URL} from 'src/app/app.constants';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class BandasService {
+
+  constructor(private http: HttpClient) {
+
+
+  }
 /* 
   loadNoticias(access_token: string, noticiasAlmacenadas: string, firmaAlmacenadas: string) {
      els headers si no n'envies no et fa falta 
@@ -32,6 +48,7 @@ import { URL } from 'src/app/app.constants';
           params
         });
       } */
+
 
 @Injectable({
   providedIn: 'root',
@@ -117,4 +134,5 @@ export class BandasService {
     const params = new HttpParams().set('id_banda', id_banda);
     return this.http.delete<any>(`${URL}/removeBanda`, { headers, params });
   }
+
 }

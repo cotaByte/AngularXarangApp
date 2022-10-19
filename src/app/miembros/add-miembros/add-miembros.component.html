@@ -1,0 +1,7 @@
+<form #formAddMiembro = "ngForm" (ngSubmit) = "addMiembro(formAddMiembro.value)" >
+    <input type = "text" name = "nombre" placeholder = "nombre" ngModel>
+    <br/>
+    <input type = "text" name = "poblacion" placeholder = "poblacion" ngModel>
+    <br/>
+    <input type = "submit" value = "Añadir Miembro">
+  </form>

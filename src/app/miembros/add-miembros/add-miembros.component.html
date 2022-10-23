@@ -1,7 +1,17 @@
 <form #formAddMiembro = "ngForm" (ngSubmit) = "addMiembro(formAddMiembro.value)" >
-    <input type = "text" name = "nombre" placeholder = "nombre" ngModel>
+    <input type = "number"  name = "nif" placeholder = "NIF" ngModel>
     <br/>
-    <input type = "text" name = "poblacion" placeholder = "poblacion" ngModel>
+    <input type = "text" name = "nombre" placeholder = "Nombre" ngModel>
+    <br/>
+    <input type = "text" name = "apellido1" placeholder = "Primer  apellido" ngModel>
+    <br/>
+    <input type = "text" name = "apellido2" placeholder = "Segundo apellido" ngModel>
+    <br/>
+    <input type = "number" name = "instrumento" placeholder = "Instrumento" ngModel>
+    <br/>
+    <input type = "number" name = "telefono" placeholder = "Teléfono/Móvil" ngModel>
+    <br/>
+    <input type = "password"  name = "pin" placeholder = "PIN" ngModel>
     <br/>
     <input type = "submit" value = "Añadir Miembro">
   </form>

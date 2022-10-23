@@ -11,16 +11,15 @@ export class AddBandasComponent implements OnInit {
 
   ngOnInit(): void {}
   addBanda(data: any) {
-    if (!data.poblacion) {
-      return alert('Debes introducir una poblacion válido');
-    }
-    if (!data.nombre) {
-      return alert('Debes introducir nombre una poblacion válido');
-    }
+    for (let key in data){
+      if (!key){
+           return alert("El campo "+key+" esta vacío");
+      }
+  }
     this.bandaService
       .addBandas(data.nombre, data.poblacion)
       .subscribe((res) => {
-        alert(res.data);
+        return alert(res.data);
       });
   }
 }

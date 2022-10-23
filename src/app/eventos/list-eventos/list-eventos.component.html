@@ -1,0 +1,15 @@
+<b>LISTADO DE EVENTOS DE LA BBDD</b>
+<hr />
+<div *ngFor="let evento of eventos">
+  <div></div>
+  <span>{{ evento.id_evento }}</span>
+  <br />
+  <span>{{ evento.nombre }}</span>
+  <br />
+  <span>{{ evento.ubicacion }}</span>
+  <br />
+  <span>{{ evento.fecha_evento }}</span>
+  <br />
+  <span>{{ evento.estado }}</span>
+  <hr />
+</div>

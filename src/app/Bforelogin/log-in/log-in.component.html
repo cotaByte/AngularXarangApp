@@ -1,0 +1,19 @@
+<head>    
+    <title> Login</title>    
+    <link rel="stylesheet" type="text/css" href="./log-in.component.css">    
+</head> 
+<body>
+    <div class="login-page">
+        <div class="form">
+          <form class="register-form">
+          </form>
+          <h2>INGRESA AQUI MAQUINON</h2>
+          <form class= "login-form" #formLogin = "ngForm" (ngSubmit) = "logIn(formLogin.value)" >
+             <input type="text" placeholder="nif" name="email" autocomplete="off"/>
+             <input type="password" placeholder="pin" name="password" autocomplete="off"/>
+             <input type = "submit" value = "Log In">
+           </form>
+          <a href="/"><button class="buttoncancel">Cancelar</button></a>
+        </div>
+      </div>         
+    </body>

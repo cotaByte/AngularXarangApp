@@ -1,43 +1,59 @@
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {URL} from 'src/app/app.constants';
-
-
-
+import {headers_genericos, URL} from 'src/app/app.constants';
 /**
  * Los servicios respecto a la gestion de miembros son:
  * - AddMiembro (nombre,poblacion) ✅
  * - getMiembros() ✅
- * - removeMiembro(token) ✅
+ * - removeMiembro(id_miembro) ✅
+ * - Login
+ * - Logout
  */
-
 
 @Injectable({
   providedIn: 'root'
 })
 
+
 export class MiembrosService {
   constructor(private http: HttpClient) {
   }
 
+
 getMiembros(){
   return this.http.get<any>(`${URL}/listMiembros`,{
     headers:
-      new HttpHeaders(
-        {'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest'}
-      )
+      new HttpHeaders(`${headers_genericos}`)
   });
 }
-addMiembros(nif:number , nombre: string, apellido1:string, apellido2:string, id_instrumento: number,telefono: number,id_banda: number,director: number, pin: number){
-  
-  const headers = new HttpHeaders({'Content-Type': 'application/json','X-Requested-With': 'XMLHttpRequest'});
 
-  const params = new HttpParams().set('nif',nif)
+
+login(nif:number, pin:number){
+  //  Componemos los headers
+  const headers = new HttpHeaders(`${headers_genericos}`);
+// Componemos  los parametros que vamos a pasar
+  const params = new HttpParams()
+  .set('nif',nif)
+  .append('pin',pin);
+
+  return this.http.post<any>(` ${URL}/login`, null, {
+    headers,
+    params
+  });
+}
+
+
+addMiembros(nif:number , nombre: string, apellido1:string, apellido2:string, id_instrumento: number,telefono: number,director: number, pin: number){
+//  Componemos los headers
+  const headers = new HttpHeaders(`${headers_genericos}`);
+// Componemos  los parametros que vamos a pasar
+  const params = new HttpParams()
+  .set('nif',nif)
   .append('nombre',nombre)
   .append('apellido1',apellido1)
   .append('apellido2',apellido2)
-  .append('id_instrumento',id_instrumento)
-  .append('id_banda',id_banda)
+  .append('instrumento',id_instrumento)
+  .append('telefono',telefono)
   .append('director',director)
   .append('pin',pin);
   return this.http.post<any>(` ${URL}/addMiembro`, null, {
@@ -48,7 +64,7 @@ addMiembros(nif:number , nombre: string, apellido1:string, apellido2:string, id_
 
 removeMiembro(token:string){
 
-  const headers = new HttpHeaders({'Content-Type': 'application/json','X-Requested-With': 'XMLHttpRequest'});
+  const headers = new HttpHeaders(`${headers_genericos}`);
   const params = new HttpParams().set('token',token);
 
   return this.http.delete<any>(`${URL}/removeMiembro`,{headers,params});

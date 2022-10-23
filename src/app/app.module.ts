@@ -11,6 +11,12 @@ import { AddBandasComponent } from './bandas/add-bandas/add-bandas.component';
 import { JoinBandasComponent } from './bandas/join-bandas/join-bandas.component';
 import { LeaveBandasComponent } from './bandas/leave-bandas/leave-bandas.component';
 import { FormsModule, NgForm } from '@angular/forms';
+import { AddEventosComponent } from './eventos/add-eventos/add-eventos.component';
+import { ListEventosComponent } from './eventos/list-eventos/list-eventos.component';
+import { LogInComponent } from './Bforelogin/log-in/log-in.component';
+import { GreetingsComponent } from './Bforelogin/greetings/greetings.component';
+import { RegisterComponent } from './Bforelogin/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +26,13 @@ import { FormsModule, NgForm } from '@angular/forms';
     AddMiembrosComponent,
     AddBandasComponent,
     JoinBandasComponent,
-    LeaveBandasComponent
-  ],
+    LeaveBandasComponent,
+    AddEventosComponent,
+    ListEventosComponent,
+    LogInComponent,
+    GreetingsComponent,
+    RegisterComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

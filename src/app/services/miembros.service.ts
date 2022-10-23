@@ -9,7 +9,6 @@ import {headers_genericos, URL} from 'src/app/app.constants';
  * - getMiembros() ✅
  * - removeMiembro(id_miembro) ✅
  * - Login
- * - Logout
  */
 
 @Injectable({

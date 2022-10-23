@@ -49,6 +49,7 @@ const routes: Routes = [
     path: 'listarEventos',
     component: ListEventosComponent,
   },
+
 ];
 
 @NgModule({

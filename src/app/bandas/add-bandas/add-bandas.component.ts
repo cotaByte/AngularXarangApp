@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
 import { BandasService } from 'src/app/services/bandas.service';
+
 
 @Component({
   selector: 'app-add-bandas',
   templateUrl: './add-bandas.component.html',
+
   styleUrls: ['./add-bandas.component.css'],
 })
 export class AddBandasComponent implements OnInit {
@@ -22,4 +25,15 @@ export class AddBandasComponent implements OnInit {
         return alert(res.data);
       });
   }
+
+  styleUrls: ['./add-bandas.component.css']
+})
+export class AddBandasComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+
 }

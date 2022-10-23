@@ -1,6 +1,8 @@
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import {headers_genericos, URL} from 'src/app/app.constants';
+
 /**
  * Los servicios respecto a la gestion de miembros son:
  * - AddMiembro (nombre,poblacion) ✅
@@ -23,7 +25,9 @@ export class MiembrosService {
 getMiembros(){
   return this.http.get<any>(`${URL}/listMiembros`,{
     headers:
+
       new HttpHeaders(`${headers_genericos}`)
+
   });
 }
 
@@ -71,20 +75,4 @@ removeMiembro(token:string){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

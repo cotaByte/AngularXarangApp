@@ -18,6 +18,7 @@ import { GreetingsComponent } from './Bforelogin/greetings/greetings.component';
 import { RegisterComponent } from './Bforelogin/register/register.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,9 @@ import { RegisterComponent } from './Bforelogin/register/register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     FormsModule,
+
     RouterModule,
     HttpClientModule
   ],

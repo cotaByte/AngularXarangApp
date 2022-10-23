@@ -10,10 +10,12 @@ import { MiembrosService } from 'src/app/services/miembros.service';
 })
 export class AddMiembrosComponent implements OnInit {
 
+
   constructor(private miembroServices:MiembrosService,private utilidades:Utilidades) {
 
    }
   ngOnInit(): void {}
+
   addMiembro(data: any) {
     let res = this.utilidades.compruebaFormulario(data);
     if (!res.ok) alert (res.msg);

@@ -5,6 +5,7 @@ import { MiembrosService } from 'src/app/services/miembros.service';
 @Component({
   selector: 'app-listar-miembros',
   templateUrl: './listar-miembros.component.html',
+
   styleUrls: ['./listar-miembros.component.css'],
 })
 export class ListarMiembrosComponent implements OnInit {
@@ -13,6 +14,7 @@ export class ListarMiembrosComponent implements OnInit {
   ngOnInit(): void {
     this.cargarMiembros();
   }
+
 
   async cargarMiembros() {
     this.miembroServices.getMiembros().subscribe(

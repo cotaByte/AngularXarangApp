@@ -16,7 +16,17 @@ import { ListEventosComponent } from './eventos/list-eventos/list-eventos.compon
 import { LogInComponent } from './Bforelogin/log-in/log-in.component';
 import { GreetingsComponent } from './Bforelogin/greetings/greetings.component';
 import { RegisterComponent } from './Bforelogin/register/register.component';
+import { NavbarComponent } from './afterLogin/navbar/navbar.component';
+import { EntradaComponent } from './afterLogin/entrada/entrada.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule} from "@angular/material/toolbar";
+import { MatSidenavModule} from "@angular/material/sidenav";
+import { MatListModule} from "@angular/material/list";
+import { MatButtonModule} from "@angular/material/button";
+import { MatIconModule} from "@angular/material/icon";
 
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -32,16 +42,25 @@ import { RegisterComponent } from './Bforelogin/register/register.component';
     ListEventosComponent,
     LogInComponent,
     GreetingsComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent,
+    EntradaComponent
     ],
   imports: [
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
     BrowserModule,
     AppRoutingModule,
-
+    FlexLayoutModule,
     FormsModule,
-
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

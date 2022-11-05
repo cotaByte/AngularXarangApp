@@ -1,1 +1,28 @@
-<p>register works!</p>
+<div class = primero>
+    <div class="login-page">
+      <div class="form">
+        <form class="register-form"></form>
+        <h2>SI NO TIENES CUENTA</h2>
+        <h2>PUEDES ANREGISTRARTE AQUI</h2>
+        <form #formAddMiembro = "ngForm" (ngSubmit) = "registraNuevoUsuario(formAddMiembro.value)" >
+          <input type = "number"  name = "nif" placeholder = "NIF" ngModel>
+          <br/>
+          <input type = "text" name = "nombre" placeholder = "Nombre" ngModel>
+          <br/>
+          <input type = "text" name = "apellido1" placeholder = "Primer  apellido" ngModel>
+          <br/>
+          <input type = "text" name = "apellido2" placeholder = "Segundo apellido" ngModel>
+          <br/>
+          <input type = "number" name = "instrumento" placeholder = "Instrumento" ngModel>
+          <br/>
+          <input type = "number" name = "telefono" placeholder = "Teléfono/Móvil" ngModel>
+          <br/>
+          <input type = "password"  name = "pin" placeholder = "PIN" ngModel>
+          <br/>
+          <input type = "submit" value = "Crear Miembro">
+        </form>
+        <a href="/"><button class="buttoncancel">Cancelar</button></a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,6 +1,8 @@
 import { registerLocaleData } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EntradaComponent } from './afterLogin/entrada/entrada.component';
+import { NavbarComponent } from './afterLogin/navbar/navbar.component';
 import { AddBandasComponent } from './bandas/add-bandas/add-bandas.component';
 import { ListarBandasComponent } from './bandas/listar-bandas/listar-bandas.component';
 import { GreetingsComponent } from './Bforelogin/greetings/greetings.component';
@@ -49,6 +51,14 @@ const routes: Routes = [
     path: 'listarEventos',
     component: ListEventosComponent,
   },
+  {
+    path: 'greetings',
+    component: EntradaComponent,
+  },  
+{
+  path :'navbar',
+  component: NavbarComponent
+}
 
 ];
 

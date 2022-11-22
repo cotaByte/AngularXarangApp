@@ -14,7 +14,9 @@ export class AddEventosComponent implements OnInit {
     private utilidades: Utilidades
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let token = this.utilidades.compruebaToken();
+  }
 
   addEvento(data: any) {
 

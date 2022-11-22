@@ -27,8 +27,6 @@ export class RegisterComponent implements OnInit {
     .subscribe(res =>{
       return alert(res.data);
     });
-
-
   }
 
 }

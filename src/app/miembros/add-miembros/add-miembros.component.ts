@@ -14,7 +14,9 @@ export class AddMiembrosComponent implements OnInit {
   constructor(private miembroServices:MiembrosService,private utilidades:Utilidades) {
 
    }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let token = this.utilidades.compruebaToken();
+  }
 
   addMiembro(data: any) {
     let res = this.utilidades.compruebaFormulario(data);

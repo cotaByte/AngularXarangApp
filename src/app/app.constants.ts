@@ -5,7 +5,13 @@ export const headers_genericos = {
   'X-Requested-With': 'XMLHttpRequest',
 };
 
-export var TOKEN = "";
+
+export const TOKEN  = {
+  id: '',
+  nombre : '',
+  director: false
+}
+
 
 export const instrumentos_id_nombre = {
   1: "Percusión",

@@ -6,11 +6,15 @@
       <form class="login-form" #formLogin="ngForm" (ngSubmit)="logIn(formLogin.value)">
         <input type = "text" name = "nif" placeholder = "Nif" ngModel>
         <input type = "password" name = "pin" placeholder = "Pin" ngModel>
-        <label for="remember-me">Recuerdame</label>
-        <input   name = "remember-me" type="checkbox" />
-        <input class="login-button" type="submit" value="Log In"/>
+        
+        <div class="checkDirector">
+          <label for="remember-me">Manten mi sesión iniciada</label>
+          <input [checked]= "esDirector"   class = "checkboxDir" id= "checkDirector" (change) = "esDirector= !esDirector" name = "remember-me" type="checkbox" />
+        </div>
+        
+        <input  class="login-button" type="submit" value="Log In"/>
       </form>
-      <a href="/"><button class="buttoncancel">Cancelar</button></a>
+      <a [routerLink]="['/']"><button class="buttoncancel">Cancelar</button></a>
     </div>
   </div>
 </div>

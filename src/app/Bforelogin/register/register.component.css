@@ -1,14 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 .login-page {
-  width: 360px;
-  padding: 8% 0 0;
+  width: 380px;
+  padding: 9% 0 0;
   margin: auto;
 }
 .form {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
+  max-width: 440px;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
@@ -17,89 +17,48 @@
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #f2f2f2;
-  width: 100%;
+  background: #f2f2ff;
+  width: 90%;
   border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
+  margin: 0 0 13px;
+  padding: 12px;
   box-sizing: border-box;
   font-size: 14px;
 }
 .form .buttoncancel {
 font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
   outline: 0;
-  background: #b96161;
-  width: 100%;
+  background: #d04148;
+  width: 80%;
   border: 0;
   padding: 15px;
+  font-size: 16px;
   color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
   cursor: pointer;
 }
 .form .buttoncancel:hover {
-  background-color: red; /* Green */
-  color: white;
+  background-color: #d50f19;
+  transition: 0.8s
 }
 
-.form button:hover,.form button:active,.form button:focus {
-  background: #6ac46e;
+.form .login-button{
+  width: 80%;
+  background-color :#3f51b5;
+  font-size: 16px;
+  color: white;
+
 }
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
+
+.form .login-button:hover{
+  background-color :#7270ba;
+  transition:0.8s;
 }
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #c4a2a2;
-}
+
+
 .primero {
   height: 100vh;
-  background: #338199; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #c377df, #0fe2d7);
-  background: -moz-linear-gradient(right, #c377df, #0fe2d7);
-  background: -o-linear-gradient(right, #c377df, #0fe2d7);
-  background: linear-gradient(to left, #c377df, #0fe2d7);
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+background: -webkit-linear-gradient(right, #3f51b5, #6461bc);
+background: -moz-linear-gradient(right, #3f51b5, #6461bc);
+background: -o-linear-gradient(right, #3f51b5, #6461bc);
+background: linear-gradient(to left, #3f51b5, #6461bc);
 }

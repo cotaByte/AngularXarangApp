@@ -1,0 +1,26 @@
+
+.contenedorElementoS{
+    height: 65px;
+    background-color: #EEE;
+    justify-content: left;
+    align-items: top;
+    border: 3px  solid rgb(223, 220, 220);
+    box-shadow: 7px 5px 38px gray;
+    border-radius: 86px;
+    margin: 32px;
+    padding: 52px;
+    }
+
+.contenedorElementoM{
+    height: 100px;
+    background-color: #EEE;
+    justify-content: left;
+    align-items: top;
+    border: 3px  solid rgb(223, 220, 220);
+    box-shadow: 7px 5px 38px gray;
+    border-radius: 86px;
+    margin: 32px;
+    padding: 52px;
+    }
+    
+        

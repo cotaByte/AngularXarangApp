@@ -1,13 +1,8 @@
-<p>listado de bandas de la bd</p>
-<hr />
-<div *ngFor="let miembro of miembros">
-  <div></div>
-  <h2>{{ miembro.id }}</h2>
-  <h2>{{ miembro.nif }}</h2>
-  <h2>{{ miembro.nombre }}</h2>
-  <h2>{{ miembro.apellido1 }}</h2>
-  <h2>{{ miembro.apellido2 }}</h2>
-  <h2>{{ miembro.telefono }}</h2>
-  <hr />
+<navbar>
+<div class = "contenedorElementoM" *ngFor="let miembro of miembros">
+  <h3>- NIF: {{ miembro.nif }}</h3>
+  <h3>- Nombre Completo: {{ miembro.nombre }} {{ miembro.apellido1 }} {{ miembro.apellido2 }}</h3>
+  <h3>- Telefono: {{ miembro.telefono }}</h3>
+  <button *ngIf="token.director ==true" (click)="eliminarMiembro(miembro.id)">Eliminame</button>
 </div>
-
+</navbar>

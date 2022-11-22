@@ -1,47 +1,48 @@
-<div style="height: 80vh;">
+<div style="height: calc( 100vh - 56px);">
   <mat-toolbar color = "primary">
     <mat-toolbar-row>
       <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
       </button>
-      <span>XarangApp</span>
+      <span (click)="navToGreetings()">XarangApp</span>
       <span class="menu-spacer"></span>
       <div fxShow="true" fxHide.lt-md>
          <!--  Los siguientes items se pondran a hidden con tamaños SM y XS -->
-        <a href="/addMiembro" mat-button>Añadir Miembros</a>
-        <a href="/listarMiembros" mat-button>Listar Miembros</a>
-        <a href="/addBanda" mat-button>Añadir Bandas</a>
-        <a href="/listarBandas" mat-button>Listar Bandas</a>
-        <a href="#" mat-button>Unirse a Bandas</a>       <!-- Falta por hacer lo del id --> 
-        <a href="#" mat-button>Abandonar Bandas</a>      <!-- Falta por hacer lo del id --> 
-        <a href="/addEvento" mat-button>Añadir Eventos</a>
-        <a href="/listarEventos" mat-button>Listar Eventos</a>
+        <a [routerLink]="['/addMiembro']" mat-button>Añadir Miembros</a>
+        <a [routerLink]="['/listarMiembros']" mat-button>Listar Miembros</a>
+        <a [routerLink]="['/addBanda']" mat-button>Añadir Bandas</a>
+        <a [routerLink]="['/listarBandas']" mat-button>Listar Bandas</a>
+        <a [routerLink]="['/joinBandas']" mat-button>Unirse a Bandas</a>       
+        <a [routerLink]="['/leaveBandas']" mat-button>Abandonar Bandas</a>     
+        <a [routerLink]="['/addEvento']" mat-button>Añadir Eventos</a>
+        <a [routerLink]="['/listarEventos']" mat-button>Listar Eventos</a>
       </div>
       <span  class= "menu-spacer-2"></span>
-      <div class="navigation">
-        <a class="button" href="">
+      <div (click)= "logout()" class="navigation" >
+        <a class="button" >
           <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png">
         <div class="logout">Logout</div>
         </a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
+  <ng-content ></ng-content>
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav>
       <mat-nav-list>
         <a (click)="sidenav.toggle()" href="" mat-list-item>Log Out</a>
-        <a href="/addMiembro" mat-list-item>Añadir Miembros</a>
-        <a href="/listarMiembros" mat-list-item>Listar Miembros</a>
-        <a href="/addBanda" mat-list-item>Añadir Bandas</a>
-        <a href="/listarBandas" mat-list-item>Listar Bandas</a>
-        <a href="#" mat-list-item>Unirse a Bandas</a>   <!-- Falta por hacer lo del id --> 
-        <a href="#"mat-list-item>Abandonar Bandas</a>   <!-- Falta por hacer lo del id --> 
-        <a href="/addEvento" mat-list-item>Añadir Eventos</a>
-        <a href="/listarEventos"mat-list-item>Listar Eventos</a>
+        <a  [routerLink]="['/addMiembro']" mat-list-item>Añadir Miembros</a>
+        <a  [routerLink]="['/listarMiembros']" mat-list-item>Listar Miembros</a>
+        <a  [routerLink]="['/addBanda']" mat-list-item>Añadir Bandas</a>
+        <a  [routerLink]="['/listarBandas']" mat-list-item>Listar Bandas</a>
+        <a  [routerLink]="['/joinBandas']" mat-list-item>Unirse a Bandas</a>   
+        <a  [routerLink]="['/leaveBandas']" mat-list-item>Abandonar Bandas</a>   
+        <a  [routerLink]="['/addEvento']" mat-list-item>Añadir Eventos</a>
+        <a  [routerLink]="['/listarEventos']" mat-list-item>Listar Eventos</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>
-        <h1>IEEE MERDE SEQUEEE</h1>
+      <ng-content ></ng-content>
         </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

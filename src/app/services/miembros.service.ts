@@ -21,13 +21,18 @@ export class MiembrosService {
   }
 
 
-getMiembros(){
+getMiembros(id:string){
+  const headers = new HttpHeaders(`${headers_genericos}`);
+  const params = new HttpParams()
+  .set('id_miembro',id)  
+
   return this.http.get<any>(`${URL}/listMiembros`,{
-    headers:
+    headers,
+    params
+  }
 
-      new HttpHeaders(`${headers_genericos}`)
 
-  });
+);
 }
 
 
@@ -68,10 +73,7 @@ addMiembros(nif:number , nombre: string, apellido1:string, apellido2:string, id_
 removeMiembro(token:string){
 
   const headers = new HttpHeaders(`${headers_genericos}`);
-  const params = new HttpParams().set('token',token);
-
+  const params = new HttpParams().set('id_miembro',token);
   return this.http.delete<any>(`${URL}/removeMiembro`,{headers,params});
-
-
 }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { instrumentos_id_nombre, instrumentos_nombre_id } from 'src/app/app.constants';
+import { Utilidades } from 'src/app/app.utilidades';
 import { BandasService } from 'src/app/services/bandas.service';
 @Component({
   selector: 'app-add-bandas',
@@ -7,16 +7,16 @@ import { BandasService } from 'src/app/services/bandas.service';
   styleUrls: ['./add-bandas.component.css'],
 })
 export class AddBandasComponent implements OnInit {
-  constructor(private bandaService: BandasService ) {}
+  constructor(private bandaService: BandasService , private utilidades: Utilidades ) {}
 
   ngOnInit(): void {
+
+    let token= this.utilidades.compruebaToken();
   }
   addBanda(data: any) {
-    for (let key in data) {
-      if (!key) {
-        return alert('El campo ' + key + ' esta vacío');
-      }
-    }
+    let res  = this.utilidades.compruebaFormulario(data);
+    if (!res.ok) return alert (res.msg);
+    
     this.bandaService
       .addBandas(data.nombre, data.poblacion)
       .subscribe((res) => {

@@ -5,7 +5,7 @@ export interface Miembro {
     apellido1:  string,
     apellido2:  string,
     id_instrumento?: number,
-    tlf: number,
+    telefono: number,
     id_banda?: number,
     director: number,
     pin: number

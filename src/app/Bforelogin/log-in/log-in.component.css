@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.login-page {
+  width: 380px;
+  padding: 9% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 440px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2ff;
+  width: 90%;
+  border: 0;
+  margin: 0 0 13px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form .buttoncancel {
+font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #d04148;
+  width: 80%;
+  border: 0;
+  padding: 15px;
+  font-size: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.form .buttoncancel:hover {
+  background-color: #d50f19;
+  transition: 0.8s
+}
+
+
+.form .login-button{
+  width: 80%;
+  background-color :#3f51b5;
+  font-size: 16px;
+  color: white;
+
+}
+
+.form .login-button:hover{
+  background-color :#7270ba;
+  transition:0.8s;
+}
+
+
+.checkDirector {
+  flex:50%
+}
+
+.checkDirector .checkboxDir{
+  flex:90%;
+}
+
+
+
+.primero {
+  height: 100vh;
+background: -webkit -linear-gradient(right, #3f51b5, #6461bc);
+background: -moz-linear-gradient(right, #3f51b5, #6461bc);
+background: -o-linear-gradient(right, #3f51b5, #6461bc);
+background: linear-gradient(to left, #3f51b5, #6461bc);
+}

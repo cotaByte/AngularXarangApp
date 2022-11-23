@@ -1,10 +1,7 @@
-<p>listado de bandas de la bd</p>
-<hr>
-<div *ngFor="let banda of bandas">
-    <div></div>
-    <span>{{banda.nombre}}</span>
-    <span>{{banda.poblacion}}</span>
-    <span>{{banda.id_banda}}</span>
-    <hr>
-
+<navbar>
+<div  class = "contenedorElementoS" *ngFor="let banda of bandas">
+    <h3>- Nombre de la Banda: {{banda.nombre}}</h3>
+    <h3>- Población: {{banda.poblacion}}</h3>
+    <button *ngIf="token.director ==true" (click)="eliminarBanda(banda.id_banda)">Eliminame</button>
 </div>
+</navbar>

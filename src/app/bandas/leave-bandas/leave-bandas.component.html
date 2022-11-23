@@ -1,1 +1,8 @@
-<p>leave-bandas works!</p>
+<navbar>
+    <div  class = "contenedorElementoS"  *ngFor="let banda of bandas">
+        <h3>{{banda.nombre}}</h3>
+        <h3>{{banda.poblacion}}</h3>
+        <h3 style = "display:none;">{{banda.id_banda}}</h3>
+        <button (click)="leaveBanda(banda.id_banda)">Abandonar</button>
+    </div>
+    </navbar>

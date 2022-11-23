@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <div class = primero>
+      <div class="login-page">
+        <div class="form">
+          <form class="register-form"></form>
+          <h2>¿ NO TIENES CUENTA ? REGISTRATE YA!</h2>
+          <form #formAddMiembro = "ngForm" (ngSubmit) = "registraNuevoUsuario(formAddMiembro.value)" >
+            <input type = "number"  name = "nif" placeholder = "NIF" ngModel>
+            <br/>
+            <input type = "text" name = "nombre" placeholder = "Nombre" ngModel>
+            <br/>
+            <input type = "text" name = "apellido1" placeholder = "Primer  apellido" ngModel>
+            <br/>
+            <input type = "text" name = "apellido2" placeholder = "Segundo apellido" ngModel>
+            <br/>
+            <input type = "number" name = "instrumento" placeholder = "Instrumento" ngModel>
+            <br/>
+            <input type = "number" name = "telefono" placeholder = "Teléfono/Móvil" ngModel>
+            <br/>
+            <input type = "password"  name = "pin" placeholder = "PIN" ngModel>
+            <br/> <br/>
+            <input class="login-button" type = "submit" value = "Crear Miembro">
+          </form>
+          <a [routerLink]="['/']"><button class="buttoncancel">Cancelar</button></a>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+  
+</html>

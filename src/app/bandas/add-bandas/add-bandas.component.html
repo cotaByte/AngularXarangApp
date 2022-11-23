@@ -1,1 +1,10 @@
-<p>add-bandas works!</p>
+<navbar>
+<form #formAddBanda = "ngForm" (ngSubmit) = "addBanda(formAddBanda.value)" >
+  <input type = "text" name = "nombre" placeholder = "nombre" ngModel>
+  <br/>
+  <input type = "text" name = "poblacion" placeholder = "poblacion" ngModel>
+  <br/>
+  <input type = "submit" value = "Añadir Banda">
+</form>
+</navbar>
+

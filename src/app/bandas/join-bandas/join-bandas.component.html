@@ -1,1 +1,8 @@
-<p>join-bandas works!</p>
+<navbar>
+    <div class="contenedorElementoS" *ngFor="let banda of bandas">
+        <div></div>
+        <h3> - Nombre de la Banda: {{banda.nombre}}</h3>
+        <h3> - Población: {{banda.poblacion}}</h3>
+        <button (click)="joinBanda(banda.id_banda)">Unirse</button>
+    </div>
+    </navbar>

@@ -26,7 +26,11 @@ export class AddEventosComponent implements OnInit {
     this.eventoService
       .addEvento(data.nombre, data.ubicacion, data.fecha_evento)
       .subscribe((res) => {
-        return alert(res.data);
+        if (res.ok){
+          var resetForm = <HTMLFormElement>document.getElementById('addEventoForm');
+          resetForm.reset();
+        }
+        return alert(res.msg);
       });
   }
 }

@@ -5,7 +5,7 @@
         <div class="form">
           <form class="register-form"></form>
           <h2>¿ NO TIENES CUENTA ? REGISTRATE YA!</h2>
-          <form #formAddMiembro = "ngForm" (ngSubmit) = "registraNuevoUsuario(formAddMiembro.value)" >
+          <form #formAddMiembro = "ngForm"  id ="registerForm" (ngSubmit) = "registraNuevoUsuario(formAddMiembro.value)" >
             <input type = "number"  name = "nif" placeholder = "NIF" ngModel>
             <br/>
             <input type = "text" name = "nombre" placeholder = "Nombre" ngModel>

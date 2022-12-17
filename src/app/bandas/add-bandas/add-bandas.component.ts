@@ -10,17 +10,19 @@ export class AddBandasComponent implements OnInit {
   constructor(private bandaService: BandasService , private utilidades: Utilidades ) {}
 
   ngOnInit(): void {
-
-    let token= this.utilidades.compruebaToken();
+    this.utilidades.compruebaToken();
   }
+
   addBanda(data: any) {
     let res  = this.utilidades.compruebaFormulario(data);
     if (!res.ok) return alert (res.msg);
     
-    this.bandaService
-      .addBandas(data.nombre, data.poblacion)
-      .subscribe((res) => {
-        return alert(res.data);
+    this.bandaService.addBandas(data.nombre, data.poblacion).subscribe((res) => {
+        if (res.ok){
+          var resetForm = <HTMLFormElement>document.getElementById('addBandaForm');
+          resetForm.reset();
+        }
+        return alert(res.msg);
       });
   }
 }

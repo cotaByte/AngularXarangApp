@@ -16,13 +16,12 @@ export class JoinBandasComponent implements OnInit {
   constructor(private utilidades:Utilidades,private bandaService : BandasService, private route: Router ) { }
 
   ngOnInit(): void {
-    
-/*     let token = TOKEN.id ? TOKEN.id: JSON.parse(localStorage.getItem('token') || '{}') ; 
-    alert(token)
-    if (token=='{}') this.route.navigate(['/']); */
-    
-    let token = this.utilidades.compruebaToken();
-    this.cargarJoinBandas(token);
+
+     this.utilidades.compruebaToken().then(token=>{
+      if (token.id!=''){
+        this.cargarJoinBandas(token);        
+      }
+     });
   }
  async cargarJoinBandas(token:any){
   this.bandaService.getJoinBandas(token.id).subscribe(res=>{
@@ -43,12 +42,6 @@ export class JoinBandasComponent implements OnInit {
     }else {
       alert (res.msg);
     }
-
-
   });
-
-
  }
-
-
 }

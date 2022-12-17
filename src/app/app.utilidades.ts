@@ -1,33 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { TOKEN } from './app.constants';
+import { MiembrosService } from './services/miembros.service';
 
 @Injectable({ providedIn: 'root' })
 export class Utilidades {
-  constructor(private route:Router) {}
+  constructor(private route: Router, public miembros: MiembrosService) {}
 
   compruebaFormulario(data: any) {
-    let ret = {ok:true,msg : ""}
+    let ret = { ok: true, msg: '' };
     Object.keys(data).forEach((res, i) => {
-      if (!data[res]){
+      if (!data[res]) {
         ret.ok = false;
-        ret.msg += "Falta el campo "+ res + "\n";
-      };
+        ret.msg += 'Falta el campo ' + res + '\n';
+      }
     });
     return ret;
   }
 
-  compruebaToken (this:any, login = false){
-    let token = TOKEN.id!='' ? TOKEN: JSON.parse(localStorage.getItem('token') || "{}") ; 
-    if (Object.keys(token).length==0 && !login ) this.route.navigate(['/']);
-    else return token;
-
+ async compruebaToken(this: any, login = false) {
+    var token = TOKEN.id != '' ? TOKEN  : JSON.parse(localStorage.getItem('token') || '{}');
+    if (Object.keys(token).length == 0 && !login) this.route.navigate(['/']);
+    else {
+          var check = await  this.miembros.PromisecheckToken(token.id);
+      if (check.valid == false) {
+        this.logOut();
+      } else {
+        return token;
+      }
+    }
   }
 
-
-  logOut (){
+  logOut() {
     localStorage.removeItem('token');
-    this.route.navigate(['/'])
+    this.route.navigate(['/']);
   }
 }
-

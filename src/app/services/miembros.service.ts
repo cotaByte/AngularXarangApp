@@ -1,5 +1,6 @@
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import {headers_genericos, URL} from 'src/app/app.constants';
 
@@ -8,7 +9,8 @@ import {headers_genericos, URL} from 'src/app/app.constants';
  * - AddMiembro (nombre,poblacion) ✅
  * - getMiembros() ✅
  * - removeMiembro(id_miembro) ✅
- * - Login
+ * - Login()✅
+ * - CheckToken ✅
  */
 
 @Injectable({
@@ -24,14 +26,12 @@ export class MiembrosService {
 getMiembros(id:string){
   const headers = new HttpHeaders(`${headers_genericos}`);
   const params = new HttpParams()
-  .set('id_miembro',id)  
+  .set('id_miembro',id);
 
   return this.http.get<any>(`${URL}/listMiembros`,{
     headers,
     params
   }
-
-
 );
 }
 
@@ -76,4 +76,15 @@ removeMiembro(token:string){
   const params = new HttpParams().set('id_miembro',token);
   return this.http.delete<any>(`${URL}/removeMiembro`,{headers,params});
 }
+
+PromisecheckToken(token:string): Promise<any>{
+  return this.checkToken(token).toPromise();
+}
+
+checkToken (token:string){
+  const headers = new HttpHeaders(`${headers_genericos}`);
+  const params = new HttpParams().set('id_miembro',token);
+  return this.http.get<any>(`${URL}/checkToken`,{headers,params});
+}
+
 }

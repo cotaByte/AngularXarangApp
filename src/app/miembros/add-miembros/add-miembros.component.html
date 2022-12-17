@@ -1,5 +1,5 @@
 <navbar>
-<form #formAddMiembro = "ngForm" (ngSubmit) = "addMiembro(formAddMiembro.value)" >
+<form #formAddMiembro = "ngForm"  id="addMiembroForm" (ngSubmit) = "addMiembro(formAddMiembro.value)" >
     <input type = "number"  name = "nif" placeholder = "NIF" ngModel>
     <br/>
     <input type = "text" name = "nombre" placeholder = "Nombre" ngModel>
@@ -15,6 +15,13 @@
     <input type = "password"  name = "pin" placeholder = "PIN" ngModel>
     <br/>
     <input type = "submit" value = "Añadir Miembro">
+    
+    <div class="checkDirector">
+      <label for="remember-me">Es Director?</label>
+      <input *ngIf="token.director==true" [checked]= "esDirector"   class = "checkboxDir" id= "checkDirector" (change) = "esDirector= !esDirector" name = "esDirector" type="checkbox" />
+    </div>
+
+
   </form>
 
 </navbar>

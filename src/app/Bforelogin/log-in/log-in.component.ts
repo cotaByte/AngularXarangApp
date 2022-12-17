@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { TOKEN } from 'src/app/app.constants';
 import { Utilidades } from 'src/app/app.utilidades';
 import { MiembrosService } from 'src/app/services/miembros.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-log-in',
@@ -11,6 +12,7 @@ import { MiembrosService } from 'src/app/services/miembros.service';
 })
 export class LogInComponent implements OnInit {
   public esDirector: boolean = false;
+
 
   constructor(
     private miembroService: MiembrosService,
@@ -22,11 +24,13 @@ export class LogInComponent implements OnInit {
 
     // si estamos en la ventana de login y tenemos localStorageGuardado, podemos acceder directamente
     if (localStorage.getItem('token')) {
-      let token = this.utilidades.compruebaToken(true);
-      TOKEN.id = token.id;
-      TOKEN.nombre = token.nombre;
-      TOKEN.director = token.director;
-      this.route.navigate(['/greetings']);
+      this.utilidades.compruebaToken(true).then(res=>{
+        TOKEN.id = res.id;
+        TOKEN.nombre = res.nombre;
+        TOKEN.director = res.director;
+        this.route.navigate(['/greetings']);
+      });
+      
     }
   }
 
@@ -34,7 +38,11 @@ export class LogInComponent implements OnInit {
     let res = this.utilidades.compruebaFormulario(data);
     if (!res.ok) return alert(res.msg);
     this.miembroService.login(data.nif, data.pin).subscribe((res) => {
-      if (!res.ok) return alert('tu no mete cabra saramambiche');
+      if (!res.ok){
+        var resetForm = <HTMLFormElement>document.getElementById('formulario');
+        resetForm.reset();
+        return alert('');
+      } 
       else {
         TOKEN.id = res.token;
         TOKEN.nombre = res.nombre;

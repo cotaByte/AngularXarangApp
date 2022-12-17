@@ -3,18 +3,16 @@
     <div class="form">
       <form class="register-form"></form>
       <h2>INGRESA AQUI PUTO CRACK</h2>
-      <form class="login-form" #formLogin="ngForm" (ngSubmit)="logIn(formLogin.value)">
+      <form class="login-form" id ='formulario' #formLogin="ngForm" (ngSubmit)="logIn(formLogin.value)">
         <input type = "text" name = "nif" placeholder = "Nif" ngModel>
         <input type = "password" name = "pin" placeholder = "Pin" ngModel>
-        
         <div class="checkDirector">
           <label for="remember-me">Manten mi sesión iniciada</label>
           <input [checked]= "esDirector"   class = "checkboxDir" id= "checkDirector" (change) = "esDirector= !esDirector" name = "remember-me" type="checkbox" />
         </div>
-        
         <input  class="login-button" type="submit" value="Log In"/>
       </form>
       <a [routerLink]="['/']"><button class="buttoncancel">Cancelar</button></a>
     </div>
-  </div>
+  </div>  
 </div>

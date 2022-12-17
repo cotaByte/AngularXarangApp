@@ -12,18 +12,22 @@ import { BandasService } from 'src/app/services/bandas.service';
 })
 export class ListarBandasComponent implements OnInit {
   bandas: Banda[] = [];
+  public esDirector: boolean = false;
   token :Token={
     id: '',
     nombre: '',
     director: false
-  }
+  };
   constructor(
     private bandaService: BandasService,
     private utilidades: Utilidades
   ) {}
 
   ngOnInit(): void {
-    this.token = this.utilidades.compruebaToken();
+    /* this.token  = this.utilidades.compruebaToken(); */
+    this.utilidades.compruebaToken().then(res=>{
+      this.token= res;
+    });
     this.cargarBandas();
   }
 

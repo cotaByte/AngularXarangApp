@@ -15,12 +15,15 @@ export class LeaveBandasComponent implements OnInit {
   constructor(private utilidades: Utilidades ,private bandaService : BandasService, private route: Router ) { }
 
 
-  ngOnInit(): void { 
-    let token = this.utilidades.compruebaToken();
-    this.cargarLeaveBandas(token);
+  ngOnInit() { 
+    this.utilidades.compruebaToken().then(token=>{
+      if (token.id!= '')this.cargarLeaveBandas(token);
+
+    });
   }
 
   async cargarLeaveBandas(token:any){
+    debugger;
     this.bandaService.getLeaveBandas(token.id).subscribe(res=>{
       this.bandas = res;
     },

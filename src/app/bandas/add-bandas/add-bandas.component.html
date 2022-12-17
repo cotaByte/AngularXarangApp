@@ -1,5 +1,5 @@
 <navbar>
-<form #formAddBanda = "ngForm" (ngSubmit) = "addBanda(formAddBanda.value)" >
+<form #formAddBanda = "ngForm"  id ="addBandaForm" (ngSubmit) = "addBanda(formAddBanda.value)" >
   <input type = "text" name = "nombre" placeholder = "nombre" ngModel>
   <br/>
   <input type = "text" name = "poblacion" placeholder = "poblacion" ngModel>

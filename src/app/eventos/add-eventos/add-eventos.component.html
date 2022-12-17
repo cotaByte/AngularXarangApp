@@ -1,6 +1,6 @@
 
 <navbar>
-<form #formAddEvento = "ngForm" (ngSubmit) = "addEvento(formAddEvento.value)" >
+<form #formAddEvento = "ngForm" id="addEventoForm" (ngSubmit) = "addEvento(formAddEvento.value)" >
     <input type = "text" name = "nombre" placeholder = "Nombre del evento" ngModel>
     <br/>
     <input type = "text" name = "ubicacion" placeholder = "Donde se realizará este evento?" ngModel>

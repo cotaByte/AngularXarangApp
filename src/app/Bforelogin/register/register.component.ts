@@ -19,14 +19,18 @@ export class RegisterComponent implements OnInit {
     let res = this.utilidades.compruebaFormulario(data);
     if (!res.ok) alert (res.msg);
     //TODO: Añadir el checkbox para poder decidir si es un director o no. (solo los directores,q llevan D en el token pueden verlo)
-    if (!data.director)  data.director = 0;
-    data.id_banda = null ;
+    if (!data.director)  data.director = false;
 
     this.miembroService.addMiembros(data.nif,data.nombre, data.apellido1, data.apellido2,data.instrumento, data.telefono,
        data.director,data.pin)
     .subscribe(res =>{
-      return alert(res.data);
+      if (res.ok){
+        var resetForm = <HTMLFormElement>document.getElementById('registerForm');
+        resetForm.reset();
+      }
+      return alert(res.msg);
     });
   }
 
 }
+  

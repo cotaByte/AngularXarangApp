@@ -20,7 +20,10 @@ export class ListarMiembrosComponent implements OnInit {
   }
   constructor(private miembroServices: MiembrosService , private utilidades:Utilidades) {}
   ngOnInit(): void {
-    this.token = this.utilidades.compruebaToken();
+    /* this.token  = this.utilidades.compruebaToken(); */
+    this.utilidades.compruebaToken().then(res=>{
+      this.token= res;
+    });
     this.cargarMiembros(this.token.id);
   }
 

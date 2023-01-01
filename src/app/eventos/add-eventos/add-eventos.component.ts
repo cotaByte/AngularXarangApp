@@ -6,7 +6,7 @@ import { EventosService } from 'src/app/services/eventos.service';
 @Component({
   selector: 'app-add-eventos',
   templateUrl: './add-eventos.component.html',
-  styleUrls: ['./add-eventos.component.css'],
+  styleUrls: ['../../app.component.css']
 })
 export class AddEventosComponent implements OnInit {
   constructor(

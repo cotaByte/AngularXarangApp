@@ -1,5 +1,5 @@
 <navbar>
-<form #formAddMiembro = "ngForm"  id="addMiembroForm" (ngSubmit) = "addMiembro(formAddMiembro.value)" >
+<form class="contenedor" #formAddMiembro = "ngForm"  id="addMiembroForm" (ngSubmit) = "addMiembro(formAddMiembro.value)" >
     <input type = "number"  name = "nif" placeholder = "NIF" ngModel>
     <br/>
     <input type = "text" name = "nombre" placeholder = "Nombre" ngModel>
@@ -14,6 +14,17 @@
     <br/>
     <input type = "password"  name = "pin" placeholder = "PIN" ngModel>
     <br/>
+    <br/>
+    <p>
+      <mat-form-field>
+        <mat-select  class="selectorInstrumento" placeholder="Instrumento" [(ngModel)]="seleccionada" name="select_instrumento">
+          <mat-option *ngFor="let op of array" [value]="op.id">
+            {{op.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    
     <input type = "submit" value = "Añadir Miembro">
     
     <div class="checkDirector">

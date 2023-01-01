@@ -23,4 +23,9 @@
     padding: 52px;
     }
     
-        
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+        margin: 5rem auto;
+        max-width: 600px;
+        } 

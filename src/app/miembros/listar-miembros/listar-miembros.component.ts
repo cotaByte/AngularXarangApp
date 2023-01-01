@@ -16,11 +16,11 @@ export class ListarMiembrosComponent implements OnInit {
   token :Token={
     id: '',
     nombre: '',
+    id_instrumento:0,
     director: false
   }
   constructor(private miembroServices: MiembrosService , private utilidades:Utilidades) {}
   ngOnInit(): void {
-    /* this.token  = this.utilidades.compruebaToken(); */
     this.utilidades.compruebaToken().then(res=>{
       this.token= res;
     });

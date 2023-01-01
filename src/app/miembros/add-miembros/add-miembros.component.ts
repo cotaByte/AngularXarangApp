@@ -3,20 +3,27 @@ import { Component, OnInit } from '@angular/core';
 import { Utilidades } from 'src/app/app.utilidades';
 import { Token } from 'src/app/models/token';
 import { MiembrosService } from 'src/app/services/miembros.service';
+import {instrumentos_id_nombre} from 'src/app/app.constants';
 
 
 @Component({
   selector: 'app-add-miembros',
   templateUrl: './add-miembros.component.html',
-  styleUrls: ['./add-miembros.component.css']
+  styleUrls: ['../../app.component.css']
 })
 export class AddMiembrosComponent implements OnInit {
+
   public esDirector: boolean = false;
   public token :Token={
     id: '',
     nombre: '',
+    id_instrumento:0,
     director: false
   }
+  array = instrumentos_id_nombre;
+
+
+  seleccionada: string = '';
 
   constructor(private miembroServices:MiembrosService,private utilidades:Utilidades) {
 
@@ -24,6 +31,7 @@ export class AddMiembrosComponent implements OnInit {
   ngOnInit(): void {
   /* this.token  = this.utilidades.compruebaToken(); */
   this.utilidades.compruebaToken().then(res=>{
+    console.table(res);
     this.token= res;
   });
   }

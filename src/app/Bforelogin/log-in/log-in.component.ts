@@ -46,6 +46,7 @@ export class LogInComponent implements OnInit {
       else {
         TOKEN.id = res.token;
         TOKEN.nombre = res.nombre;
+        TOKEN.id_instrumento = res.id_instrumento;
         TOKEN.director = TOKEN.id.indexOf('D') != -1;
         if (this.esDirector)
           localStorage.setItem('token', JSON.stringify(TOKEN));

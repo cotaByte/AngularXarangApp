@@ -39,6 +39,18 @@ export class EventosService {
     const headers = new HttpHeaders(`${headers_genericos}`);
     const params = new HttpParams().set('id', id_evento);
 
-    return this.http.delete<any>(`${URL}/removeMiembro`, { headers, params });
+    return this.http.delete<any>(`${URL}/removeEvent`, { headers, params });
   }
+
+  closeEvent(id_evento:string ){
+    const headers = new HttpHeaders(`${headers_genericos}`);
+    const params = new HttpParams().set('id_evento', id_evento);
+    return this.http.post<any>(` ${URL}/closeEvent`, null, {
+      headers,
+      params,
+    });
+  }
+
 }
+
+

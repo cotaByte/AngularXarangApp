@@ -9,34 +9,36 @@ export const headers_genericos = {
 export const TOKEN  = {
   id: '',
   nombre : '',
+  id_instrumento:0,
   director: false
 }
 
 
-export const instrumentos_id_nombre = {
-  1: "Percusión",
-  2: "Tuba",
-  3: "Trombón",
-  4: "Trompa",
-  5: "Trompeta",
-  6: "Bombardí",
-  7: "Saxo Tenor",
-  8: "Saxo Alto",
-  9: "Flauta",
-  10: "Flautín"
-};
+export const instrumentos_id_nombre = [
+  {id: 1, nombre: "Percusión"},
+  {id:2,  nombre:"Tuba"},
+  {id:3,  nombre:"Trombón"},
+  {id:4,  nombre:"Trompa"},
+  {id:5,  nombre: "Trompeta"},
+  {id:6,  nombre:"Bombardí"},
+  {id:7,  nombre:"Saxo Tenor"},
+  {id:8,  nombre:"Saxo Alto"},
+  {id:9,  nombre:"Flauta"},
+  {id:10, nombre:"Flautín"}
+
+];
 
 /* export const instrumentos_nombre_id = Object.entries(instrumentos_id_nombre).map(([key, value]) => [value, key]); */
-export const instrumentos_nombre_id = {
- "Percusión": 1,
- "Tuba": 2,
- "Trombón": 3,
- "Trompa":4,
- "Trompeta": 5,
- "Bombardí": 6,
- "Saxo Tenor":7,
-  "Saxo Alto": 8,
-  "Flauta": 9,
-  "Flautín": 10,
-  "Clarinete": 11
-};
+export const instrumentos_nombre_id =[
+  {"Percusión": 1},
+  {"Tuba": 2},
+  {"Trombón": 3},
+  {"Trompa":4},
+  {"Trompeta": 5},
+  {"Bombardí": 6},
+  {"Saxo Tenor":7},
+  {"Saxo Alto": 8},
+  {"Flauta": 9},
+  {"Flautín": 10},
+  {"Clarinete": 11}
+] ;

@@ -1,0 +1,14 @@
+<navbar>
+  <div *ngIf="token.director==true"> 
+    <button class="button2" (click)="addRequerimientoEvento()" class="button2">Añadir requerimiento</button>
+  </div>
+  
+  <div class = "contenedorElementoM"  *ngFor="let require of requires"   >
+    <h3> Instrumento del require :{{require.nombre_instrumento}}</h3>
+    <h3> Aforado actual: {{require.actual}} / {{require.max}}</h3>
+    <button class="button2">Inscribirse</button>
+  </div>
+</navbar>
+
+
+

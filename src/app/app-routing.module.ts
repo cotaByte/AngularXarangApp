@@ -15,9 +15,10 @@ import { AddEventosComponent } from './eventos/add-eventos/add-eventos.component
 import { ListEventosComponent } from './eventos/list-eventos/list-eventos.component';
 import { AddMiembrosComponent } from './miembros/add-miembros/add-miembros.component';
 import { ListarMiembrosComponent } from './miembros/listar-miembros/listar-miembros.component';
+import { ListRequerimientosComponent } from './requerimientos/list-requerimientos/list-requerimientos.component';
+import { AddRequerimientoComponent } from './requerimientos/add-requerimiento/add-requerimiento.component';
 
 const routes: Routes = [
-
   {
     path: '',
     component: GreetingsComponent,
@@ -57,22 +58,28 @@ const routes: Routes = [
   {
     path: 'greetings',
     component: EntradaComponent,
-  },  
-{
-  path :'navbar',
-  component: NavbarComponent
-},
-{
-  path :'joinBandas',
-  component: JoinBandasComponent
-},
-{
-  path :'leaveBandas',
-  component: LeaveBandasComponent
-}
-
+  },
+  {
+    path: 'navbar',
+    component: NavbarComponent,
+  },
+  {
+    path: 'joinBandas',
+    component: JoinBandasComponent,
+  },
+  {
+    path: 'leaveBandas',
+    component: LeaveBandasComponent,
+  },
+  {
+    path: 'listRequerimientos/:id_evento',
+    component: ListRequerimientosComponent,
+  },
+  {
+    path: 'addRequerimiento/:id_evento',
+    component: AddRequerimientoComponent,
+  },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

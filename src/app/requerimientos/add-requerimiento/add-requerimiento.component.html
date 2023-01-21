@@ -1,0 +1,19 @@
+<navbar>
+    <form #formAddRequerimiento = "ngForm" class="contenedor"  id ="addRequireForm" (ngSubmit) = "addRequerimiento(formAddRequerimiento.value)" >
+        <p>
+            <mat-form-field>
+              <mat-select  class="selectorInstrumento" placeholder="Instrumento" [(ngModel)]="seleccionada" name="instrumento">
+                <mat-option *ngFor="let op of array" [value]="op.id">
+                  {{op.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+          <label style="margin:  12px;" for="solicitantes">Numero de solicitados (máximo 5):</label>
+          <input type = "number" name = "solicitantes" placeholder = "Numero de solicitados" max="5" min="1" ngModel>
+        <input  class="button" type = "submit" value = "Añadir require">
+      </form>
+      <div class="contenedor">
+        <button class="button2" (click)="volerListRequires()">Volver a requerimientos</button>
+      </div>
+</navbar>

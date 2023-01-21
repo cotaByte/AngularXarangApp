@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Utilidades } from 'src/app/app.utilidades';
 import { Evento } from 'src/app/models/evento';
 import { Token } from 'src/app/models/token';
@@ -18,7 +19,7 @@ export class ListEventosComponent implements OnInit {
     director: false
   }
 
-  constructor(private eventoServices: EventosService, private utilidades: Utilidades) {}
+  constructor(private eventoServices: EventosService, private utilidades: Utilidades, public route: Router) {}
 
   ngOnInit(): void {
 
@@ -41,7 +42,6 @@ export class ListEventosComponent implements OnInit {
   }
 
   eliminarEvento(id_evento: string){
-    debugger;
     if (!this.token) this.utilidades.logOut();
     this.eventoServices.removeEvent(id_evento).subscribe(res=>{
       if(res.ok){
@@ -59,5 +59,11 @@ export class ListEventosComponent implements OnInit {
       }
       alert(res.msg);
     })
+  }
+
+
+
+  verRequerimientos(id_evento:string){
+      this.route.navigate(['/listRequerimientos',id_evento]);
   }
 }

@@ -15,22 +15,21 @@ import { headers_genericos, URL } from 'src/app/app.constants';
 })
 export class RequerimientosService {
   constructor(private http: HttpClient) {}
-
-  getRequerimientosEvento() {
-    return this.http.get<any>(`${URL}/listRequirementsForEvent`, {
-      headers: new HttpHeaders(`${headers_genericos}`),
-    });
+  getRequerimientosEvento(token:string,id_evento:string) {
+    const headers = new HttpHeaders(`${headers_genericos}`);
+    const params = new HttpParams().set('id_miembro', token).append('id_evento', id_evento);
+    return this.http.get<any>(` ${URL}/listRequirementsForEvent`, { headers, params });
   }
 
-  addRequerimiento2Event(id_evento: string, instrumento: string, max: string) {
+  addRequerimiento2Event(id_evento: string, instrumento: number, max:number) {
     //  Componemos los headers
     const headers = new HttpHeaders(`${headers_genericos}`);
     // Componemos  los parametros que vamos a pasar
     const params = new HttpParams()
       .set('id_evento', id_evento)
-      .append('instrumento', instrumento)
+      .append('id_instrumento', instrumento)
       .append('num_max', max);
-    return this.http.post<any>(` ${URL}/addEventoRequerimiento'`, null, {
+    return this.http.post<any>(` ${URL}/addEventoRequerimiento`, null, {
       headers,
       params,
     });
@@ -43,7 +42,7 @@ export class RequerimientosService {
       .set('id_evento', id_evento)
       .append('id_instrumento', instrumento)
       .append('id_miembro', id_miembro); // el propio valor del token que tengas
-    return this.http.post<any>(` ${URL}/inscribeToEvent'`, null, {
+    return this.http.post<any>(` ${URL}/inscribeToEvent`, null, {
       headers,
       params,
     });

@@ -23,7 +23,6 @@ export class LeaveBandasComponent implements OnInit {
   }
 
   async cargarLeaveBandas(token:any){
-    debugger;
     this.bandaService.getLeaveBandas(token.id).subscribe(res=>{
       this.bandas = res;
     },

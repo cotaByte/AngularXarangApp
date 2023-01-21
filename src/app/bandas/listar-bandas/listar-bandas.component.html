@@ -2,6 +2,6 @@
 <div  class = "contenedorElementoS" *ngFor="let banda of bandas">
     <h3>- Nombre de la Banda: {{banda.nombre}}</h3>
     <h3>- Población: {{banda.poblacion}}</h3>
-    <button *ngIf="token.director ==true" (click)="eliminarBanda(banda.id_banda)">Eliminame</button>
+    <button  class="button2" *ngIf="token.director ==true" (click)="eliminarBanda(banda.id_banda)">Eliminame</button>
 </div>
 </navbar>

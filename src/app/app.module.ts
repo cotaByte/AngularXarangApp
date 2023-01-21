@@ -25,9 +25,9 @@ import { MatListModule} from "@angular/material/list";
 import { MatButtonModule} from "@angular/material/button";
 import { MatIconModule} from "@angular/material/icon";
 import { MatSelectModule } from '@angular/material/select';
-
-
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ListRequerimientosComponent } from './requerimientos/list-requerimientos/list-requerimientos.component';
+import { AddRequerimientoComponent } from './requerimientos/add-requerimiento/add-requerimiento.component';
 
 
 @NgModule({
@@ -45,7 +45,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     GreetingsComponent,
     RegisterComponent,
     NavbarComponent,
-    EntradaComponent
+    EntradaComponent,
+    ListRequerimientosComponent,
+    AddRequerimientoComponent
     ],
   imports: [
     BrowserAnimationsModule,

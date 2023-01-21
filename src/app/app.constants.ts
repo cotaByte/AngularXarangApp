@@ -24,7 +24,8 @@ export const instrumentos_id_nombre = [
   {id:7,  nombre:"Saxo Tenor"},
   {id:8,  nombre:"Saxo Alto"},
   {id:9,  nombre:"Flauta"},
-  {id:10, nombre:"Flautín"}
+  {id:10, nombre:"Flautín"},
+  {id:11, nombre:"Clarinete"}
 
 ];
 

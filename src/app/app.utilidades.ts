@@ -19,7 +19,6 @@ export class Utilidades {
   }
 
  async compruebaToken(this: any, login = false) {
-  debugger;
     var token = TOKEN.id != '' ? TOKEN  : JSON.parse(localStorage.getItem('token') || '{}');
     if (Object.keys(token).length == 0 && !login) this.route.navigate(['/']);
     else {

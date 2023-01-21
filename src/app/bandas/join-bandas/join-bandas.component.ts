@@ -36,7 +36,6 @@ export class JoinBandasComponent implements OnInit {
   let token = TOKEN.id;
   this.bandaService.joinBandas(token,id_banda).subscribe(res=>{
     if(res.ok){
-      debugger;
       this.cargarJoinBandas(TOKEN);
       return alert(res.msg);
     }else {

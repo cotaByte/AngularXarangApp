@@ -37,12 +37,13 @@ export class AddMiembrosComponent implements OnInit {
   }
 
   addMiembro(data: any) {
+    debugger;
     let res = this.utilidades.compruebaFormulario(data);
     if (!res.ok) alert (res.msg);
     //TODO: Añadir el checkbox para poder decidir si es un director o no. (solo los directores,q llevan D en el token pueden verlo)
     data.director = this.esDirector;
 
-    this.miembroServices.addMiembros(data.nif,data.nombre, data.apellido1, data.apellido2,data.instrumento, data.telefono,
+    this.miembroServices.addMiembros(data.dni,data.nombre, data.apellido1, data.apellido2,data.instrumento, data.telefono,
        data.director,data.pin)
     .subscribe(res =>{
       if (res.ok){
@@ -52,5 +53,8 @@ export class AddMiembrosComponent implements OnInit {
       return alert(res.msg);
     });
   }
+
+
+
 
 }

@@ -1,8 +1,23 @@
 <navbar>
-<div class = "contenedorElementoM" *ngFor="let miembro of miembros">
-  <h3>- NIF: {{ miembro.nif }}</h3>
-  <h3>- Nombre Completo: {{ miembro.nombre }} {{ miembro.apellido1 }} {{ miembro.apellido2 }}</h3>
-  <h3>- Telefono: {{ miembro.telefono }}</h3>
-  <button class="button2" *ngIf="token.director ==true" (click)="eliminarMiembro(miembro.id)">Eliminame</button>
-</div>
-</navbar>
+  <div class="courses-container"  *ngFor="let miembro of miembros" >
+      <div class="course">
+        <div class="course-preview">
+          <h6>DNI</h6>
+          <h2>{{miembro.nif}}</h2>
+        </div>
+        <div class="course-info">
+          <h6>Nombre</h6>
+          <h2>{{miembro.nombre}}  {{ miembro.apellido1 }} {{ miembro.apellido2 }}</h2>
+          <h6>Número de telefono</h6>
+          <h2>{{miembro.telefono}}</h2>
+          <h6>Instrumento</h6>
+          <h2>{{miembro.instrumento}}</h2>
+          <section class="botonera-lista">    
+            <div class="botonera-lista--forma">
+              <button class="btn" *ngIf="token.director ==true" (click)="eliminarMiembro(miembro.id)">Eliminame</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </navbar>

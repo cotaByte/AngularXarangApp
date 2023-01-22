@@ -35,4 +35,16 @@ export class Utilidades {
     localStorage.removeItem('token');
     this.route.navigate(['/']);
   }
+
+
+  compruebaLetraDNI(dni:string){
+    let letrasDNI= "TRWAGMYFPDXBNJZSQVHLCKET";
+    let numero = dni.charAt(0)=='X'?  parseInt(dni.substring(1,9)): parseInt(dni.substring(0,8));
+    let letra = dni.charAt(0)=='X'? dni.substring(9,10): dni.substring(8,9);
+    let pos= numero % 23;
+    return (letra==letrasDNI.substring(pos,pos+1)) ? true:false;
+
+
+
+  }
 }

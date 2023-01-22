@@ -5,7 +5,7 @@ import { headers_genericos, URL } from 'src/app/app.constants';
  * Los servicios respecto a la gestion de requerimientos son:
  * - AddRequerimiento (id_evento, instrumento,num_max) ✅
  * - getRequerimientos(id_evento)  ✅
- * - removeRequerimiento(id_miembro) 
+ * - removeRequerimiento(id_miembro)
  * - Inscribe2Event(id_evento, instrumento, id_miembro) ✅
  * - DesInscribe2Event(id_evento, instrumento, id_miembro) ✅
  */
@@ -15,13 +15,18 @@ import { headers_genericos, URL } from 'src/app/app.constants';
 })
 export class RequerimientosService {
   constructor(private http: HttpClient) {}
-  getRequerimientosEvento(token:string,id_evento:string) {
+  getRequerimientosEvento(token: string, id_evento: string) {
     const headers = new HttpHeaders(`${headers_genericos}`);
-    const params = new HttpParams().set('id_miembro', token).append('id_evento', id_evento);
-    return this.http.get<any>(` ${URL}/listRequirementsForEvent`, { headers, params });
+    const params = new HttpParams()
+      .set('id_miembro', token)
+      .append('id_evento', id_evento);
+    return this.http.get<any>(` ${URL}/listRequirementsForEvent`, {
+      headers,
+      params,
+    });
   }
 
-  addRequerimiento2Event(id_evento: string, instrumento: number, max:number) {
+  addRequerimiento2Event(id_evento: string, instrumento: number, max: number) {
     //  Componemos los headers
     const headers = new HttpHeaders(`${headers_genericos}`);
     // Componemos  los parametros que vamos a pasar
@@ -30,6 +35,15 @@ export class RequerimientosService {
       .append('id_instrumento', instrumento)
       .append('num_max', max);
     return this.http.post<any>(` ${URL}/addEventoRequerimiento`, null, {
+      headers,
+      params,
+    });
+  }
+
+  removeRequerimiento2Evento(id_require: string) {
+    const headers = new HttpHeaders(`${headers_genericos}`);
+    const params = new HttpParams().set('id_requerimiento', id_require);
+    return this.http.delete<any>(` ${URL}/removeRequerimiento`, {
       headers,
       params,
     });

@@ -51,12 +51,12 @@ login(dni:number, pin:number){
 }
 
 
-addMiembros(nif:number , nombre: string, apellido1:string, apellido2:string, id_instrumento: number,telefono: number,director: number, pin: number){
+addMiembros(dni:number , nombre: string, apellido1:string, apellido2:string, id_instrumento: number,telefono: number,director: number, pin: number){
 //  Componemos los headers
   const headers = new HttpHeaders(`${headers_genericos}`);
 // Componemos  los parametros que vamos a pasar
   const params = new HttpParams()
-  .set('nif',nif)
+  .set('dni',dni)
   .append('nombre',nombre)
   .append('apellido1',apellido1)
   .append('apellido2',apellido2)

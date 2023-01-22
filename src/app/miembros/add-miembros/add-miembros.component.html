@@ -1,14 +1,12 @@
 <navbar>
 <form class="contenedor" #formAddMiembro = "ngForm"  id="addMiembroForm" (ngSubmit) = "addMiembro(formAddMiembro.value)" >
-    <input type = "number"  name = "dni" placeholder = "DNI" ngModel>
+    <input type = "text"  name = "dni" placeholder = "DNI" ngModel>
     <br/>
     <input type = "text" name = "nombre" placeholder = "Nombre" ngModel>
     <br/>
     <input type = "text" name = "apellido1" placeholder = "Primer  apellido" ngModel>
     <br/>
     <input type = "text" name = "apellido2" placeholder = "Segundo apellido" ngModel>
-    <br/>
-    <input type = "number" name = "instrumento" placeholder = "Instrumento" ngModel>
     <br/>
     <input type = "number" name = "telefono" placeholder = "Teléfono/Móvil" ngModel>
     <br/>
@@ -17,7 +15,7 @@
     <br/>
     <p>
       <mat-form-field>
-        <mat-select  class="selectorInstrumento" placeholder="Instrumento" [(ngModel)]="seleccionada" name="select_instrumento">
+        <mat-select  class="selectorInstrumento" placeholder="Instrumento" [(ngModel)]="seleccionada" name="instrumento">
           <mat-option *ngFor="let op of array" [value]="op.id">
             {{op.nombre}}
           </mat-option>

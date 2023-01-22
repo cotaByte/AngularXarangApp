@@ -1,8 +1,19 @@
 <navbar>
-    <div class="contenedorElementoS" *ngFor="let banda of bandas">
-        <div></div>
-        <h3> - Nombre de la Banda: {{banda.nombre}}</h3>
-        <h3> - Población: {{banda.poblacion}}</h3>
-        <button class="button2" (click)="joinBanda(banda.id_banda)">Unirse</button>
-    </div>
+        <div class="courses-container"  *ngFor="let banda of bandas" >
+        <div class="course">
+          <div class="course-preview">
+          </div>
+          <div class="course-info">
+            <h6>Nombre de la Banda</h6>
+            <h2>{{banda.nombre}}</h2>
+            <h6>Poblacion</h6>
+            <h2>{{banda.poblacion}}</h2>
+            <section class="botonera-lista">    
+              <div class="botonera-lista--forma">
+                <button class="btn" (click)="joinBanda(banda.id_banda)">Unirse</button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
     </navbar>

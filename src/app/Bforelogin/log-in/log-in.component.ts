@@ -37,7 +37,7 @@ export class LogInComponent implements OnInit {
   logIn(data: any) {
     let res = this.utilidades.compruebaFormulario(data);
     if (!res.ok) return alert(res.msg);
-    this.miembroService.login(data.nif, data.pin).subscribe((res) => {
+    this.miembroService.login(data.dni, data.pin).subscribe((res) => {
       if (!res.ok){
         var resetForm = <HTMLFormElement>document.getElementById('formulario');
         resetForm.reset();

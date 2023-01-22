@@ -36,12 +36,12 @@ getMiembros(id:string){
 }
 
 
-login(nif:number, pin:number){
+login(dni:number, pin:number){
   //  Componemos los headers
   const headers = new HttpHeaders(`${headers_genericos}`);
 // Componemos  los parametros que vamos a pasar
   const params = new HttpParams()
-  .set('nif',nif)
+  .set('dni',dni)
   .append('pin',pin);
 
   return this.http.post<any>(` ${URL}/login`, null, {

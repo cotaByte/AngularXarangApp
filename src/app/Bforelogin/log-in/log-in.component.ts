@@ -41,7 +41,7 @@ export class LogInComponent implements OnInit {
       if (!res.ok){
         var resetForm = <HTMLFormElement>document.getElementById('formulario');
         resetForm.reset();
-        return alert('');
+        return alert(res.msg);
       } 
       else {
         TOKEN.id = res.token;

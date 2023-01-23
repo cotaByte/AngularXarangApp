@@ -1,9 +1,7 @@
 <html>
   <body>
     <div class = primero>
-      <div class="login-page">
         <div class="form">
-          <form class="register-form"></form>
           <h2>¿ NO TIENES CUENTA ? REGISTRATE YA!</h2>
           <form #formAddMiembro = "ngForm"  id ="registerForm" (ngSubmit) = "registraNuevoUsuario(formAddMiembro.value)" >
             <input type = "number"  name = "nif" placeholder = "NIF" ngModel>
@@ -25,7 +23,6 @@
           <a [routerLink]="['/']"><button class="buttoncancel">Cancelar</button></a>
         </div>
       </div>
-    </div>
     
   </body>
   

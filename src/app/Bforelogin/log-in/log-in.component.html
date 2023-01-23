@@ -1,8 +1,6 @@
 <div class = primero>
-  <div class="login-page">
     <div class="form">
-      <form class="register-form"></form>
-      <h2>INGRESA AQUI PUTO CRACK</h2>
+      <h2>INGRESA AQUI</h2>
       <form class="login-form" id ='formulario' #formLogin="ngForm" (ngSubmit)="logIn(formLogin.value)">
         <input type = "text" name = "dni" placeholder = "DNI" ngModel>
         <input type = "password" name = "pin" placeholder = "PIN" ngModel>
@@ -13,6 +11,5 @@
         <input  class="login-button" type="submit" value="Log In"/>
       </form>
       <a [routerLink]="['/']"><button class="buttoncancel">Cancelar</button></a>
-    </div>
   </div>  
 </div>

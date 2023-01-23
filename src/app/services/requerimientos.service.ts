@@ -49,12 +49,12 @@ export class RequerimientosService {
     });
   }
 
-  inscribe2Evento(id_evento: string, instrumento: number, id_miembro: string) {
+  inscribe2Evento(id_evento: string,id_require:string, id_miembro: string) {
     const headers = new HttpHeaders(`${headers_genericos}`);
     // Componemos  los parametros que vamos a pasar
     const params = new HttpParams()
       .set('id_evento', id_evento)
-      .append('id_instrumento', instrumento)
+      .append('id_requerimiento', id_require )
       .append('id_miembro', id_miembro); // el propio valor del token que tengas
     return this.http.post<any>(` ${URL}/inscribeToEvent`, null, {
       headers,
@@ -62,13 +62,13 @@ export class RequerimientosService {
     });
   }
 
-  desInscribe2Evento(id_evento: string, id_miembro: string) {
+  desInscribe2Evento(id_require: string, id_miembro: string) {
     const headers = new HttpHeaders(`${headers_genericos}`);
     // Componemos  los parametros que vamos a pasar
     const params = new HttpParams()
-      .set('id_evento', id_evento)
+      .set('id_requerimiento', id_require)
       .append('id_miembro', id_miembro); // el propio valor del token que tengas
-    return this.http.delete<any>(` ${URL}/desInscribe2Event`, {
+    return this.http.delete<any>(` ${URL}/desInscribeForEvent`, {
       headers,
       params,
     });

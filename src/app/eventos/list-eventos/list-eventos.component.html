@@ -1,5 +1,6 @@
 
 <navbar>
+  <ng-template [ngIf]="eventos.length>0" [ngIfElse]="vacio"></ng-template>
 <div class="courses-container"  *ngFor="let evento of eventos"  (click)="verRequerimientos(evento.id_evento)">
     <div class="course">
       <div class="course-preview">
@@ -22,6 +23,11 @@
       </div>
     </div>
   </div>
-
-
+  <ng-template #vacio>
+    <div class="vacio">
+      <div class="vacio_son">
+        <h2  class="msg_vacio">No hay miembros disponibles en este momento</h2>
+      </div>
+    </div>
+  </ng-template>
 </navbar>

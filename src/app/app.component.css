@@ -3,6 +3,22 @@
   justify-content: space-around;
 }
 
+.vacio{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.vacio_son{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.msg_vacio{
+  font-size: 40px;
+}
+
 @media screen and (max-width: 768px) and (min-width: 600px) {
   .botonera-lista {
     flex-wrap: wrap;
@@ -22,6 +38,13 @@
   }
   .botonera-lista--forma {
     margin: 10px 0 10px 0;
+  }
+  .msg_vacio{
+word-wrap: normal;
+
+  }  
+  .vacio_son{
+    align-items: center;
   }
 
 }

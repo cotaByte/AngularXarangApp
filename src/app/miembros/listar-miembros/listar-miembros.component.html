@@ -1,5 +1,6 @@
 <navbar>
-  <div class="courses-container"  *ngFor="let miembro of miembros" >
+  <ng-template [ngIf]="miembros.length>0" [ngIfElse]="vacio">
+    <div class="courses-container"  *ngFor="let miembro of miembros" >
       <div class="course">
         <div class="course-preview">
           <h6>DNI</h6>
@@ -20,4 +21,13 @@
         </div>
       </div>
     </div>
+  </ng-template>
+  <ng-template #vacio>
+    <div class="vacio">
+      <div class="vacio_son">
+        <h2  class="msg_vacio">No hay miembros disponibles en este momento</h2>
+      </div>
+    </div>
+  </ng-template>
+  
   </navbar>

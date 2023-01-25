@@ -2,7 +2,7 @@
   flex: 1 1 auto;
 }
 .menu-spacer {
- width: 78px;
+ width: 100px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=robto:400);
@@ -30,10 +30,10 @@ img {
 .button {
 	text-decoration: none;
 	float: right;
-  padding: 12px;
-  margin: 15px;
+  padding: 20px;
+  margin: 25px;
   color: white;
-  width: 25px;
+  width: 35px;
   background-color: primary;
   transition: width .35s;
   -webkit-transition: width .35s;

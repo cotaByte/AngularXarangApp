@@ -30,7 +30,7 @@
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav>
       <mat-nav-list>
-        <a (click)="sidenav.toggle()" href="" mat-list-item>Log Out</a>
+
         <a  [routerLink]="['/addMiembro']" mat-list-item>Añadir Miembros</a>
         <a  [routerLink]="['/listarMiembros']" mat-list-item>Listar Miembros</a>
         <a  [routerLink]="['/addBanda']" mat-list-item>Añadir Bandas</a>
@@ -39,6 +39,8 @@
         <a  [routerLink]="['/leaveBandas']" mat-list-item>Abandonar Bandas</a>   
         <a  [routerLink]="['/addEvento']" mat-list-item>Añadir Eventos</a>
         <a  [routerLink]="['/listarEventos']" mat-list-item>Listar Eventos</a>
+        <br>
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Salir</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>

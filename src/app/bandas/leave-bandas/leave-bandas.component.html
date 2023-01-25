@@ -1,19 +1,28 @@
 <navbar>
-<div class="courses-container"  *ngFor="let banda of bandas" >
-    <div class="course">
-      <div class="course-preview">
+  <ng-template [ngIf]="bandas.length>0" [ngIfElse]="vacio">
+    <div class="courses-container"  *ngFor="let banda of bandas" >
+      <div class="course">
+        <div class="course-preview">
+        </div>
+        <div class="course-info">
+          <h6>Nombre de la Banda</h6>
+          <h2>{{banda.nombre}}</h2>
+          <h6>Poblacion</h6>
+          <h2>{{banda.poblacion}}</h2>
+          <section class="botonera-lista">    
+            <div class="botonera-lista--forma">
+              <button  class="btn" (click)="leaveBanda(banda.id_banda)">Abandonar</button>
+            </div>
+          </section>
+        </div>
       </div>
-      <div class="course-info">
-        <h6>Nombre de la Banda</h6>
-        <h2>{{banda.nombre}}</h2>
-        <h6>Poblacion</h6>
-        <h2>{{banda.poblacion}}</h2>
-        <section class="botonera-lista">    
-          <div class="botonera-lista--forma">
-            <button  class="btn" (click)="leaveBanda(banda.id_banda)">Abandonar</button>
-          </div>
-        </section>
+    </div>  
+  </ng-template>
+  <ng-template #vacio>
+    <div class="vacio">
+      <div class="vacio_son">
+        <h2  class="msg_vacio">No hay bandas disponibles en este momento</h2>
       </div>
     </div>
-  </div>
-    </navbar>
+  </ng-template>
+</navbar>

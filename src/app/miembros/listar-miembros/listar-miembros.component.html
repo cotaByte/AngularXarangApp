@@ -1,7 +1,7 @@
 <navbar>
   <ng-template [ngIf]="miembros.length>0" [ngIfElse]="vacio">
     <div class="courses-container"  *ngFor="let miembro of miembros" >
-      <div class="course">
+      <div class="course-miembros">
         <div class="course-preview">
           <h6>DNI</h6>
           <h2>{{miembro.dni}}</h2>

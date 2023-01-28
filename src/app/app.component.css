@@ -37,8 +37,11 @@
   .botonera-lista {
     flex-direction: column;
     align-items: center;
-
   }
+  .course-eventos {
+    max-width: 90vw;
+  }
+
   .msg_vacio{
 word-wrap: normal;
 
@@ -49,19 +52,6 @@ word-wrap: normal;
 
 
 }
-
-.contenedorElementoS{
-    height: 65px;
-    background-color: #EEE;
-    justify-content: left;
-    align-items: top;
-    border: 3px  solid rgb(223, 220, 220);
-    box-shadow: 7px 5px 38px gray;
-    border-radius: 86px;
-    margin: 32px;
-    padding: 52px;
-    }
-
 
     @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
@@ -78,7 +68,9 @@ word-wrap: normal;
       border-radius: 10px;
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
       display: flex;
-      margin: 15px;
+      margin-left: 20px;
+      margin-top: 22px;
+      margin-bottom: 20px;
       overflow: hidden;
       width: 450px;
       height: 310px;
@@ -153,19 +145,6 @@ word-wrap: normal;
       font-size: 16px;
       padding: 12px 25px;
       margin:5px 0 ;
-    }
-
-  
-.contenedorElementoM{
-    height: 100px;
-    background-color: #EEE;
-    justify-content: left;
-    align-items: top;
-    border: 3px  solid rgb(223, 220, 220);
-    box-shadow: 7px 5px 38px gray;
-    border-radius: 86px;
-    margin: 32px;
-    padding: 52px;
     }
 
 .contenedor {

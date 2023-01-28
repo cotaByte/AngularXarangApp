@@ -19,7 +19,7 @@
   font-size: 40px;
 }
 
-@media screen and (max-width: 768px) and (min-width: 600px) {
+@media only screen and (max-width: 768px) and (min-width: 600px) {
   .botonera-lista {
     flex-wrap: wrap;
   }
@@ -27,7 +27,10 @@
     text-align: center;
     width: 50%;
   }
-
+  .courses-container{  
+    width:90vw;
+    color: rebeccapurple;
+}
 }
 
 @media screen and (max-width: 599px) {
@@ -36,9 +39,6 @@
     align-items: center;
 
   }
-  .botonera-lista--forma {
-    margin: 10px 0 10px 0;
-  }
   .msg_vacio{
 word-wrap: normal;
 
@@ -46,6 +46,7 @@ word-wrap: normal;
   .vacio_son{
     align-items: center;
   }
+
 
 }
 
@@ -69,10 +70,42 @@ word-wrap: normal;
     }
 
     .courses-container{
-      max-width: 900px;
+      display: inline-block;
     }
     
-    
+    .course {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      margin: 15px;
+      overflow: hidden;
+      width: 450px;
+      height: 310px;
+    }
+        
+    .course-miembros {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      margin: 15px;
+      overflow: hidden;
+      width: 450px;
+      height: 350px;
+    }
+      
+        
+    .course-eventos {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      margin: 20px;
+      overflow: hidden;
+      width: 550px;
+      height: 310px;
+    }
     body {
       background-image: linear-gradient(45deg, #7175da, #9790F2);
       font-family: 'Muli', sans-serif;
@@ -82,17 +115,6 @@ word-wrap: normal;
       flex-direction: column;
       min-height: 100vh;
       margin: 0;
-    }
-    
-    .course {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-      display: flex;
-      margin: 20px;
-      max-width: 90%;
-      overflow: hidden;
-      width: 700px;
     }
     
     .course h6 {

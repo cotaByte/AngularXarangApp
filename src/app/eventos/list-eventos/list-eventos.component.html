@@ -2,7 +2,7 @@
 <navbar>
   <ng-template [ngIf]="eventos.length>0" [ngIfElse]="vacio"></ng-template>
 <div class="courses-container"  *ngFor="let evento of eventos"  (click)="verRequerimientos(evento.id_evento)">
-    <div class="course">
+    <div class="course-eventos">
       <div class="course-preview">
         <h6>Evento</h6>
         <h2>{{evento.nombre}}</h2>

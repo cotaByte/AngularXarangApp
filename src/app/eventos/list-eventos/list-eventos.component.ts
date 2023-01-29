@@ -43,25 +43,27 @@ export class ListEventosComponent implements OnInit {
 
   eliminarEvento(id_evento: string){
     if (!this.token) this.utilidades.logOut();
-    this.eventoServices.removeEvent(id_evento).subscribe(res=>{
-      if(res.ok){
-        this.cargarEventos();
-      } 
-      alert(res.msg); 
-    });
+    if (confirm("Está a punto de eliminar un evento, quiere continuar?")){
+      this.eventoServices.removeEvent(id_evento).subscribe(res=>{
+        if(res.ok){
+          this.cargarEventos();
+        } 
+        alert(res.msg); 
+      });
+    }
   }
 
   cerrarEvento(id_evento:string){
     if (!this.token) this.utilidades.logOut();
-    this.eventoServices.closeEvent(id_evento).subscribe(res=>{
-      if (res.ok){
-        this.cargarEventos();
-      }
-      alert(res.msg);
-    })
+    if (confirm("Está a punto de cerrar un evento, esto lo marcará como finiquitado\n desea contiuar?")){
+      this.eventoServices.closeEvent(id_evento).subscribe(res=>{
+        if (res.ok){
+          this.cargarEventos();
+        }
+        alert(res.msg);
+      });
+    }
   }
-
-
 
   verRequerimientos(id_evento:string){
       this.route.navigate(['/listRequerimientos',id_evento]);

@@ -1,5 +1,5 @@
 .menu-spacer-2 {
-  flex: 1 1 auto;
+  flex: 40 1 auto;
 }
 .menu-spacer {
  width: 100px;
@@ -48,5 +48,8 @@ a:hover .logout{
   opacity: .9;
 }
 
-
-
+@media screen and (max-width: 599px) {
+  .navigation{
+    display: none;
+  }
+}

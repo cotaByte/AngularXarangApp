@@ -42,12 +42,15 @@ export class ListarMiembrosComponent implements OnInit {
   eliminarMiembro(id_miembro: string){
     let token = TOKEN;
     if (!token) return alert ("No se ha podido eliminar el usuario");
-    this.miembroServices.removeMiembro(id_miembro).subscribe(res=>{
-      if (res.ok){
-        this.cargarMiembros(token.id);
-        return alert(res.msg);
+    if (confirm("Va a eliminar un miembro, desea continuar? ")){
+      console.log("faria faena");
+      this.miembroServices.removeMiembro(id_miembro).subscribe(res=>{
+        if (res.ok){
+          this.cargarMiembros(token.id);
+          return alert(res.msg);
+        }
       }
+      );
     }
-    );
   }
 }

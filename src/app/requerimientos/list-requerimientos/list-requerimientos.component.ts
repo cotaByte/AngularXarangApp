@@ -51,37 +51,42 @@ export class ListRequerimientosComponent implements OnInit {
     }
 
     removeRequire(id_require:string){
-      this.requerimientosService.removeRequerimiento2Evento(id_require).subscribe(res=>{
-        if(res.ok){
-          this.cargarRequerimientos(this.token.id,this.id_evento);
-          return alert(res.msg);
-        }else {
-          alert (res.msg);
-        }
-      });
+      if (confirm("Esta a punto de eliminar un requerimiento, quiere continuar?")){
+        this.requerimientosService.removeRequerimiento2Evento(id_require).subscribe(res=>{
+          if(res.ok){
+            this.cargarRequerimientos(this.token.id,this.id_evento);
+            return alert(res.msg);
+          }else {
+            alert (res.msg);
+          }
+        });
+      }
     }
 
     inscribeToEvento(id_require:string){
-      this.requerimientosService.inscribe2Evento(this.id_evento,id_require,this.token.id).subscribe(res=>{
-        if(res.ok){
-          this.cargarRequerimientos(this.token.id,this.id_evento);
-          return alert(res.msg);
-        }else {
-          alert (res.msg);
-        }
-      });
+      if (confirm("Quiere inscribirse en este evento?")){
+        this.requerimientosService.inscribe2Evento(this.id_evento,id_require,this.token.id).subscribe(res=>{
+          if(res.ok){
+            this.cargarRequerimientos(this.token.id,this.id_evento);
+            return alert(res.msg);
+          }else {
+            alert (res.msg);
+          }
+        });
+      }
     }
 
     desinscribe2Event(id_require:string){
-      this.requerimientosService.desInscribe2Evento(id_require,this.token.id).subscribe(res=>{
-        if(res.ok){
-          this.cargarRequerimientos(this.token.id,this.id_evento);
-          return alert(res.msg);
-        }else {
-          alert (res.msg);
-        }
-      });
-
-    
+      if (confirm("Está a punto de desinscribirse de este evento \n quiere continuar?")){
+        this.requerimientosService.desInscribe2Evento(id_require,this.token.id).subscribe(res=>{
+          if(res.ok){
+            this.cargarRequerimientos(this.token.id,this.id_evento);
+            return alert(res.msg);
+          }else {
+            alert (res.msg);
+          }
+        });  
+      }
+      
   }
 }

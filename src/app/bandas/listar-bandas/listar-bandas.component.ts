@@ -46,13 +46,16 @@ export class ListarBandasComponent implements OnInit {
 
   eliminarBanda(id_banda :string){
     let  token = TOKEN;
-    this.bandaService.deleteBanda(id_banda).subscribe(res=>{
-      if (res.ok){
-        this.cargarBandas();
-        return alert(res.msg);
+    if (confirm("Está a punto de eliminar una banda, quiere continuar?")){
+      this.bandaService.deleteBanda(id_banda).subscribe(res=>{
+        if (res.ok){
+          this.cargarBandas();
+          return alert(res.msg);
+        }
       }
+      );
     }
-    );
+    
   }
 
 }

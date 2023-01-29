@@ -12,12 +12,30 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100vw;
+  text-align: center;
   transform: translate(-50%,-50%);
+
 }
 
 .msg_vacio{
   font-size: 40px;
 }
+
+.cabecera{
+  position: relative;
+  width: 100%;
+  margin-top: 50px ;
+}
+
+.check_label{
+font-size: 17px;
+}
+.checkDirector {
+ margin-top: 12px;
+}
+
+
 
 @media only screen and (max-width: 768px) and (min-width: 600px) {
   .botonera-lista {
@@ -29,7 +47,6 @@
   }
   .courses-container{  
     width:90vw;
-    color: rebeccapurple;
 }
 }
 
@@ -50,12 +67,19 @@ word-wrap: normal;
     align-items: center;
   }
 
+  .contenedor{
+  width: 85vw;
+  }
+  .mat-form-field{
+    width: 85vw !important
+  }
+  
 
 }
 
     @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
-    * {
+    * { 
       box-sizing: border-box;
     }
 
@@ -151,8 +175,20 @@ word-wrap: normal;
     display: flex;
     flex-direction: column;
     margin: 5rem auto;
-    max-width: 600px;
+    max-width: 500px;
     } 
+
+.inputs_forms{
+  border-radius: 8px;
+  height: 35px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 13px;
+}
+.mat-form-field{
+  width: 500px;
+}
+
     .button2 {
         display: inline-block;
         transition: all 0.2s ease-in;

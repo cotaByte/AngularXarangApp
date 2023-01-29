@@ -1,4 +1,10 @@
 <navbar>
+  <div class="cabecera">
+    <div class="vacio_son">
+      <h2 class="msg_vacio"> Añade un requerimiento </h2>
+    </div>
+  </div>
+
     <form #formAddRequerimiento = "ngForm" class="contenedor"  id ="addRequireForm" (ngSubmit) = "addRequerimiento(formAddRequerimiento.value)" >
         <p>
             <mat-form-field>
@@ -9,11 +15,11 @@
               </mat-select>
             </mat-form-field>
           </p>
-          <label style="margin:  12px;" for="solicitantes">Numero de solicitados (máximo 5):</label>
-          <input type = "number" name = "solicitantes" placeholder = "Numero de solicitados" max="5" min="1" ngModel>
-        <input  class="button" type = "submit" value = "Añadir require">
+          <label for="solicitantes">Numero de solicitados (máximo 5):</label>
+          <input  class="inputs_forms" type = "number" name = "solicitantes" placeholder = "Numero de solicitados" max="5" min="1" ngModel>
+        <input  class="btn" type = "submit" value = "Añadir require">
       </form>
       <div class="contenedor">
-        <button class="button2" (click)="volerListRequires()">Volver a requerimientos</button>
+        <button class="btn" (click)="volerListRequires()">Volver a requerimientos</button>
       </div>
 </navbar>

@@ -1,4 +1,9 @@
 <navbar>
+  <div class="cabecera">
+    <div class="vacio_son">
+      <h2 class="msg_vacio"> Unirse a una banda</h2>
+    </div>
+  </div>
   <ng-template [ngIf]="bandas.length>0" [ngIfElse]="vacio">
     <div class="courses-container"  *ngFor="let banda of bandas" >
       <div class="course">

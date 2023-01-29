@@ -1,10 +1,15 @@
 <navbar>
+  <div class="cabecera">
+    <div class="vacio_son">
+      <h2 class="msg_vacio"> Añade una banda</h2>
+    </div>
+  </div>
 <form #formAddBanda = "ngForm" class="contenedor"  id ="addBandaForm" (ngSubmit) = "addBanda(formAddBanda.value)" >
-  <input type = "text" name = "nombre" placeholder = "nombre" ngModel>
+  <input    class="inputs_forms" type = "text" name = "nombre" placeholder = "Nombre" ngModel>
   <br/>
-  <input type = "text" name = "poblacion" placeholder = "poblacion" ngModel>
+  <input    class="inputs_forms" type = "text" name = "poblacion" placeholder = "Población" ngModel>
   <br/>
-  <input type = "submit" value = "Añadir Banda">
+  <input    class="btn" type = "submit" value = "Añadir Banda">
 </form>
 </navbar>
 

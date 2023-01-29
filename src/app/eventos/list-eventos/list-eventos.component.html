@@ -1,5 +1,10 @@
 
 <navbar>
+  <div class="cabecera">
+    <div class="vacio_son">
+      <h2 class="msg_vacio">Listar eventos</h2>
+    </div>
+  </div>
   <ng-template [ngIf]="eventos.length>0" [ngIfElse]="vacio"></ng-template>
 <div class="courses-container"  *ngFor="let evento of eventos"  (click)="verRequerimientos(evento.id_evento)">
     <div class="course-eventos">

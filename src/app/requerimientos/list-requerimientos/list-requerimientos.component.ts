@@ -19,6 +19,7 @@ export class ListRequerimientosComponent implements OnInit {
   };
   inscrito : boolean = false;
   id_evento : string = this.activatedRoute.snapshot.paramMap.get('id_evento') ||'';
+  nombre_evento: string = '';
 
   constructor(private activatedRoute: ActivatedRoute,private route:Router ,private Utilidades: Utilidades, private requerimientosService : RequerimientosService) { }
 
@@ -36,6 +37,8 @@ export class ListRequerimientosComponent implements OnInit {
         (res) => {
           this.requires = res.data;
           this.inscrito=res.inscrito;
+          this.nombre_evento = res.nombre_evento;
+          console.log(this.nombre_evento);
         },
         (err) => {
           console.table(err);

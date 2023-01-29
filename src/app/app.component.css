@@ -10,6 +10,7 @@
 }
 .vacio_son{
   position: absolute;
+  margin: 5px 0px;
   top: 50%;
   left: 50%;
   width: 100vw;
@@ -73,6 +74,7 @@ word-wrap: normal;
   .mat-form-field{
     width: 85vw !important
   }
+
   
 
 }
@@ -85,6 +87,7 @@ word-wrap: normal;
 
     .courses-container{
       display: inline-block;
+      margin-top: 22px;
     }
     
     .course {

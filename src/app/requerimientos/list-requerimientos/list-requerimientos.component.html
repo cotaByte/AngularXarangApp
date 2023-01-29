@@ -5,8 +5,11 @@
       <h2 class="msg_vacio" > del evento <i>{{this.nombre_evento}}</i> </h2>
     </div>
   </div>
+  <br>
+  <br>
+  <br>
   <div *ngIf="token.director==true"> 
-    <button class="button2" (click)="addRequerimientoEvento()" class="button2">Añadir requerimiento</button>
+    <button style="margin-left:12px ;" class="btn" (click)="addRequerimientoEvento()" >Añadir requerimiento</button>
   </div>
   <ng-template [ngIf]="requires.length>0" [ngIfElse]="vacio">
     <div class="courses-container"  *ngFor="let  require of requires" >

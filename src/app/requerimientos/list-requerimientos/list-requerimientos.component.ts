@@ -79,10 +79,6 @@ export class ListRequerimientosComponent implements OnInit {
         }
       });
 
-
-
-    }
+    
   }
-
-
-
+}

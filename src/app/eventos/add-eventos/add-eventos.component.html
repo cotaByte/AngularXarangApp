@@ -1,12 +1,17 @@
 
 <navbar>
+  <div class="cabecera">
+    <div class="vacio_son">
+      <h2 class="msg_vacio"> Añade un evento </h2>
+    </div>
+  </div>
 <form #formAddEvento = "ngForm" class="contenedor" id="addEventoForm" (ngSubmit) = "addEvento(formAddEvento.value)" >
-    <input type = "text" name = "nombre" placeholder = "Nombre del evento" ngModel>
+    <input  class="inputs_forms" type = "text" name = "nombre" placeholder = "Nombre del evento" ngModel>
     <br/>
-    <input type = "text" name = "ubicacion" placeholder = "Donde se realizará este evento?" ngModel>
+    <input  class="inputs_forms" type = "text" name = "ubicacion" placeholder = "Donde se realizará este evento?" ngModel>
     <br/>
-    <input type = "date" name = "fecha_evento" placeholder = "Fecha del evento" ngModel>
+    <input  class="inputs_forms" type = "date" name = "fecha_evento" placeholder = "Fecha del evento" ngModel>
     <br/>
-    <input type = "submit" value = "Añadir Evento">
+    <input class="btn" type = "submit" value = "Añadir Evento">
   </form>
 </navbar>

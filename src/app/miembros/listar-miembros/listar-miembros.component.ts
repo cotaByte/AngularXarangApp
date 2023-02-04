@@ -32,6 +32,7 @@ export class ListarMiembrosComponent implements OnInit {
     this.miembroServices.getMiembros(token).subscribe(
       (res) => {
         this.miembros = res;
+
       },
       (err) => {
         console.table(err);

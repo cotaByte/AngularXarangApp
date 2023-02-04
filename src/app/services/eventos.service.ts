@@ -21,6 +21,16 @@ export class EventosService {
     });
   }
 
+
+  getEventosByMiembro(token:string) {
+    const headers = new HttpHeaders(`${headers_genericos}`);
+    const params = new HttpParams()
+      .set('id_miembro', token);
+    
+    return this.http.get<any>(`${URL}/getEventosByMiembro`, {
+      headers,params});
+  }
+
   addEvento(nombre: string, ubicacion: string, fecha_evento: string) {
     //  Componemos los headers
     const headers = new HttpHeaders(`${headers_genericos}`);

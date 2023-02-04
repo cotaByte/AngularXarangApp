@@ -88,10 +88,17 @@
                 <div class="cabecera_apartado">
                     <h1 class="cab_lateral">ESTOS SON TUS PRÓXIMOS EVENTOS</h1>            
                     </div>
-                    <li class="listado_eventos"> Evento 1 el dia 12/03/2023</li>
-                    <li class="listado_eventos"> Evento 2 el dia 12/03/2023</li>
-                    <li class="listado_eventos" > Evento 3 el dia 12/03/2023</li>
-                    <li class="listado_eventos"> Evento 4 el dia 12/03/2023</li>            
+                    <ng-template [ngIf]="eventos.length>0" [ngIfElse]="noEventos">
+                        <div *ngFor="let evento of eventos">
+                            <li class="listado_eventos"> {{evento.nombre}} el dia {{evento.fecha_evento}}</li>
+                        </div>
+                                            </ng-template>
+                    <ng-template #noEventos>
+                        <div class="cabecera_apartado" >
+                            <h1 class="cab_lateral" > No tienes eventos disponibles todavía. Porque no hechas un vistazo a la seccion de <i>Eventos</i> para inscribirte en uno?</h1>
+                        </div>
+                        
+                    </ng-template>
             </div>
         </div>
     </body>

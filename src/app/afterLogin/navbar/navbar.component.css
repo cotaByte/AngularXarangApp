@@ -52,9 +52,19 @@ a:hover .logout{
   font-size:17px;
 }
 
+.tagNombre{
+  font-size: 32px;
+}
+
 
 @media screen and (max-width: 599px) {
   .navigation{
     display: none;
   }
+.tagNombre{
+  display: none;
+}
+
+
+
 }

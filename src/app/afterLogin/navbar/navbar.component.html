@@ -4,7 +4,7 @@
       <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
       </button>
-      <span (click)="navToGreetings()">XarangApp</span>
+      <span class="tagNombre" (click)="navToGreetings()">XarangApp</span>
       <span class="menu-spacer"></span>
       <div fxShow="true" fxHide.lt-md>
         <a class="toolbar" *ngIf="token.director" [routerLink]="['/addMiembro']" mat-button>Añadir Miembros</a>
@@ -30,7 +30,7 @@
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav>
       <mat-nav-list>
-
+        <a class="sidenav" [routerLink]="['/greetings']" mat-list-item>Inicio</a>
         <a class="sidenav" *ngIf="token.director" [routerLink]="['/addMiembro']" mat-list-item>Añadir Miembros</a>
         <a class="sidenav" [routerLink]="['/listarMiembros']" mat-list-item>Listar Miembros</a>
         <a  class="sidenav" *ngIf="token.director" [routerLink]="['/addBanda']" mat-list-item>Añadir Bandas</a>

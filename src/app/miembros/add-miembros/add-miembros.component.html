@@ -21,7 +21,7 @@
     <input class="inputs_forms" type = "number" name = "telefono" placeholder = "Teléfono/Móvil" ngModel>
     <input class="inputs_forms" type = "password"  name = "pin" placeholder = "PIN" ngModel>
     <div class="checkDirector">
-      <label class="check_label"  for="remember-me">Es Director? </label>
+      <label class="check_label" *ngIf="token.director==true"  for="remember-me">Es Director? </label>
       <input  *ngIf="token.director==true" [checked]= "esDirector"   class = "checkboxDir" id= "checkDirector" (change) = "esDirector= !esDirector" name = "esDirector" type="checkbox" />
     </div>
     <br/>

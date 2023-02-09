@@ -2,22 +2,30 @@
   <body>
     <div class = primero>
         <div class="form">
-          <h2>¿ NO TIENES CUENTA ? REGISTRATE YA!</h2>
+          <h2>¿NO TIENES CUENTA? REGISTRATE YA!</h2>
           <form #formAddMiembro = "ngForm"  id ="registerForm" (ngSubmit) = "registraNuevoUsuario(formAddMiembro.value)" >
-            <input type = "number"  name = "nif" placeholder = "NIF" ngModel>
+            <input type = "text"  name = "nif" placeholder = "DNI" ngModel>
             <br/>
             <input type = "text" name = "nombre" placeholder = "Nombre" ngModel>
             <br/>
-            <input type = "text" name = "apellido1" placeholder = "Primer  apellido" ngModel>
+            <input type = "text" name = "apellido1" placeholder = "Primer apellido" ngModel>
             <br/>
             <input type = "text" name = "apellido2" placeholder = "Segundo apellido" ngModel>
-            <br/>
-            <input type = "number" name = "instrumento" placeholder = "Instrumento" ngModel>
             <br/>
             <input type = "number" name = "telefono" placeholder = "Teléfono/Móvil" ngModel>
             <br/>
             <input type = "password"  name = "pin" placeholder = "PIN" ngModel>
-            <br/> <br/>
+            <br/>
+            <p>
+              <mat-form-field>
+                <mat-select  class="selectorInstrumento" placeholder="Instrumento" [(ngModel)]="seleccionada" name="instrumento">
+                  <mat-option *ngFor="let op of array" [value]="op.id">
+                    {{op.nombre}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+             <br/>
             <input class="login-button" type = "submit" value = "Crear Miembro">
           </form>
           <a [routerLink]="['/']"><button class="buttoncancel">Cancelar</button></a>

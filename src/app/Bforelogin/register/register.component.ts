@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Utilidades } from 'src/app/app.utilidades';
 import { MiembrosService } from 'src/app/services/miembros.service';
+import {instrumentos_id_nombre} from 'src/app/app.constants';
+
 
 @Component({
   selector: 'app-register',
@@ -8,6 +10,9 @@ import { MiembrosService } from 'src/app/services/miembros.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  array = instrumentos_id_nombre;
+  seleccionada:string = '';
+
 
   constructor(private miembroService: MiembrosService,private  utilidades: Utilidades) { }
 

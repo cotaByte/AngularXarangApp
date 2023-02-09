@@ -60,6 +60,11 @@ background: -moz-linear-gradient(right, #3f51b5, #6461bc);
 background: -o-linear-gradient(right, #3f51b5, #6461bc);
 background: linear-gradient(to left, #3f51b5, #6461bc);
 }
+.mat-form-field{
+  width: 85%;
+  height: 45px;
+}
+
 
 @media screen and (max-width: 768px)  {
   .form{

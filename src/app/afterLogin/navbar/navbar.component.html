@@ -40,7 +40,7 @@
         <a  class="sidenav" *ngIf="token.director" [routerLink]="['/addEvento']" mat-list-item>Añadir Eventos</a>
         <a  class="sidenav" [routerLink]="['/listarEventos']" mat-list-item>Listar Eventos</a>
         <br>
-        <a style="margin-top: 59vh; font-size: 21px;" (click)="sidenav.toggle()" href="" mat-list-item>Salir</a>
+        <a class="btnSalir" (click)="sidenav.toggle()" href="" mat-list-item>Salir</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>

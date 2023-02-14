@@ -130,8 +130,6 @@ body{
     .div2 { grid-area: 1 / 1; }
     .div3 { grid-area: 2 / 1; }
 
-    .imagen_central{}
-
     .imagen_lateral{
       width: 90%;
       height: 14%;

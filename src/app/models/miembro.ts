@@ -9,5 +9,5 @@ export interface Miembro {
     telefono: number,
     id_banda?: number,
     director: number,
-    pin: number
+    pwd: string
 }

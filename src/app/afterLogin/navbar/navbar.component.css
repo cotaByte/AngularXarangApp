@@ -57,6 +57,11 @@ a:hover .logout{
 }
 
 
+.btnSalir{
+  margin-top: 43vh; 
+  font-size: 21px;
+}
+
 @media screen and (max-width: 599px) {
   .navigation{
     display: none;

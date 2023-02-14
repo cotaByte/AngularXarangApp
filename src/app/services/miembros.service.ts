@@ -36,13 +36,13 @@ getMiembros(id:string){
 }
 
 
-login(dni:number, pin:number){
+login(dni:number, pwd:string){
   //  Componemos los headers
   const headers = new HttpHeaders(`${headers_genericos}`);
 // Componemos  los parametros que vamos a pasar
   const params = new HttpParams()
   .set('dni',dni)
-  .append('pin',pin);
+  .append('pwd',pwd);
 
   return this.http.post<any>(` ${URL}/login`, null, {
     headers,
@@ -51,7 +51,7 @@ login(dni:number, pin:number){
 }
 
 
-addMiembros(dni:number , nombre: string, apellido1:string, apellido2:string, id_instrumento: number,telefono: number,director: number, pin: number){
+addMiembros(dni:number , nombre: string, apellido1:string, apellido2:string, id_instrumento: number,telefono: number,director: number, pwd: number){
 //  Componemos los headers
   const headers = new HttpHeaders(`${headers_genericos}`);
 // Componemos  los parametros que vamos a pasar
@@ -63,7 +63,7 @@ addMiembros(dni:number , nombre: string, apellido1:string, apellido2:string, id_
   .append('instrumento',id_instrumento)
   .append('telefono',telefono)
   .append('director',director)
-  .append('pin',pin);
+  .append('pwd',pwd);
   return this.http.post<any>(` ${URL}/addMiembro`, null, {
     headers,
     params

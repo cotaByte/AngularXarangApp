@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { TOKEN } from './app.constants';
 import { MiembrosService } from './services/miembros.service';
+import * as CryptoJS from 'crypto-js';
 
 @Injectable({ providedIn: 'root' })
 export class Utilidades {
@@ -43,8 +44,10 @@ export class Utilidades {
     let letra = dni.charAt(0)=='X'? dni.substring(9,10): dni.substring(8,9);
     let pos= numero % 23;
     return (letra==letrasDNI.substring(pos,pos+1)) ? true:false;
+  }
 
-
-
+  encriptaPassword(pwd:string){
+    let hashedPwd=CryptoJS.SHA256(pwd);
+    return hashedPwd.toString();
   }
 }

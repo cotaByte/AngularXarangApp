@@ -46,7 +46,7 @@ export class AddMiembrosComponent implements OnInit {
     data.director = this.esDirector;
     
     this.miembroServices.addMiembros(data.dni,data.nombre, data.apellido1, data.apellido2,data.instrumento, data.telefono,
-       data.director,data.pin)
+       data.director,data.pwd)
     .subscribe(res =>{
       if (res.ok){
         var resetForm = <HTMLFormElement>document.getElementById('addMiembroForm');

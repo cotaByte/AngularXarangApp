@@ -28,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ListRequerimientosComponent } from './requerimientos/list-requerimientos/list-requerimientos.component';
 import { AddRequerimientoComponent } from './requerimientos/add-requerimiento/add-requerimiento.component';
+import { ListMiembrosByEventoComponent } from './eventos/list-miembros-by-evento/list-miembros-by-evento.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { AddRequerimientoComponent } from './requerimientos/add-requerimiento/ad
     NavbarComponent,
     EntradaComponent,
     ListRequerimientosComponent,
-    AddRequerimientoComponent
+    AddRequerimientoComponent,
+    ListMiembrosByEventoComponent
     ],
   imports: [
     BrowserAnimationsModule,

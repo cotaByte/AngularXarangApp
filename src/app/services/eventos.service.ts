@@ -61,6 +61,12 @@ export class EventosService {
     });
   }
 
+  getMiembrosByEvento(id_evento:string){
+    debugger;
+    const headers = new HttpHeaders(`${headers_genericos}`);
+    const params = new HttpParams().set('id_evento', id_evento);
+    return this.http.get<any>(` ${URL}/getMiembrosByEvento`,{headers,params});
+  }
 }
 
 

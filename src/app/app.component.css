@@ -58,6 +58,7 @@ font-size: 17px;
   }
   .course-eventos {
     max-width: 90vw;
+    min-height: 377px; 
   }
 
   .msg_vacio{
@@ -171,7 +172,7 @@ word-wrap: normal;
       color: #fff;
       font-size: 16px;
       padding: 12px 25px;
-      margin:5px 0 ;
+      margin:5px 2px;
     }
 
 .contenedor {

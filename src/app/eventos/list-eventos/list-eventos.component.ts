@@ -68,4 +68,11 @@ export class ListEventosComponent implements OnInit {
   verRequerimientos(id_evento:string){
       this.route.navigate(['/listRequerimientos',id_evento]);
   }
+
+
+  verInscritos (id_evento:string){
+
+    debugger;
+    this.route.navigate(['/listMiembrosByEvento',id_evento]);
+  }
 }

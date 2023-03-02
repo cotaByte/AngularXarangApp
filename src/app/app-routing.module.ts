@@ -17,7 +17,7 @@ import { AddMiembrosComponent } from './miembros/add-miembros/add-miembros.compo
 import { ListarMiembrosComponent } from './miembros/listar-miembros/listar-miembros.component';
 import { ListRequerimientosComponent } from './requerimientos/list-requerimientos/list-requerimientos.component';
 import { AddRequerimientoComponent } from './requerimientos/add-requerimiento/add-requerimiento.component';
-
+import { ListMiembrosByEventoComponent } from './eventos/list-miembros-by-evento/list-miembros-by-evento.component';
 const routes: Routes = [
   {
     path: '',
@@ -79,6 +79,11 @@ const routes: Routes = [
     path: 'addRequerimiento/:id_evento',
     component: AddRequerimientoComponent,
   },
+  {
+    path: 'listMiembrosByEvento/:id_evento',
+    component: ListMiembrosByEventoComponent,
+  },
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -6,9 +6,9 @@
     </div>
   </div>
   <ng-template [ngIf]="eventos.length>0" [ngIfElse]="vacio"></ng-template>
-<div class="courses-container"  *ngFor="let evento of eventos"  (click)="verRequerimientos(evento.id_evento)">
+<div class="courses-container"  *ngFor="let evento of eventos"  >
     <div class="course-eventos">
-      <div class="course-preview">
+      <div class="course-preview"  (click)="verRequerimientos(evento.id_evento)">
         <h6>Evento</h6>
         <h2>{{evento.nombre}}</h2>
       </div>
@@ -24,6 +24,9 @@
           <div class="botonera-lista--forma">
           <button class="btn" *ngIf="token.director ==true" (click)="cerrarEvento(evento.id_evento)">Cerrar Evento</button>
           </div>
+          <div class="botonera-lista--forma">
+            <button class="btn" *ngIf="token.director ==true" (click)="verInscritos(evento.id_evento)">Ver Inscritos</button>
+            </div>
         </section>
       </div>
     </div>

@@ -9,27 +9,27 @@
   margin-bottom: 15px;
 }
 
-  .div_btn{
+ .div_btn{
     margin-bottom: 12px;
   text-align: center;
 
   }
 
-  .div2 h1{
+ .div2 h1{
     font-size: 43px;
     font-weight: 450 ;
     text-align: center;
 
   }
 
-  .div2 p{
+ .div2 p{
     padding: 5px 30px;
     font-size: 21px;
-    text-align: left;
+    text-align: justify;
 
   }
 
-  .imagen_lateral{
+ .imagen_lateral{
     width: 50%;
     height: 20vh;
     margin: 12px 5px  35px 27px ;
@@ -44,54 +44,64 @@
   html{
     height: 100%;
     background-color:#F5F5F5;
-}
-body{
+  }
+  body{
     height: 100%;
     margin: 0;
     background-color:#F5F5F5;
-}
-.parent {
+  }
+  .parent {
     height: 100%;
     display: grid;
-    grid-template-columns: 23% 55% 20%;
+    grid-template-columns: 23% 55% 22%;
     grid-template-rows: 2fr;
     grid-row-gap: 0px;
-}
+  }
     
-.div1 { 
+  .div1 { 
     grid-area: 1 / 1;
     background-color:#F5F5F5; 
-}
-.div2 { 
+  }
+  .div2 { 
     grid-area: 1 / 2;
     background-color:#F5F5F5;
-}
-.div3 { 
+    border:solid silver 0.5px
+  }
+  .div3 { 
     grid-area: 1 / 3;
     background-color:#F5F5F5;
-}
+  }
 
-.listado_eventos{
+  .listado_eventos{
   margin-left: 15%;
   margin-bottom: 7px;
   font-size: 17px;
-
-}
+  }
 
 .imagen_lateral{
   width: 18vw;
   height: 23vh;
   margin: 12px 5px  35px 27px ;
-}
+  }
 
+img{
+  border-radius: 12px;
+}
 
 .cabecera_apartado{
   margin-top: 50px ;
   margin-bottom: 50px;
 }
+
+
+.cabecera_noticia{
+padding: 15px;
+}
+
 .texto_lateral{
   padding:0px 33px;
   font-size: 16px;
+  
 }
 .cab_lateral{
   font-size: 24px;
@@ -99,8 +109,22 @@ body{
   text-align: center;
   margin-left: 5px;
   word-wrap: normal;
+}
+
+.cab_no_eventos{
+  font-size: 24px;
+  font-weight: 550 ;
+  text-align: center;
+  margin-left: 5px;
+  padding: 12px 35px ;
+  word-wrap: normal;
 
 }
+
+p{
+  text-align: justify;
+}
+
 .titulo_lateral{
   font-size: 19px;
   font-weight: 450 ;
@@ -111,6 +135,15 @@ body{
   font-size: 30px;
   font-weight: 450 ;
   text-align: center;
+}
+
+
+.card_noticia{
+  background-color: #f7eece;
+  margin: 12px;
+  border-radius: 22px;
+  box-shadow: 6px 6px #3d498a;
+  
 }
 
 
@@ -146,14 +179,19 @@ body{
       text-align: center;
     }
     .titulo_lateral{
-  font-size:24px;
-  font-weight: 450 ;
-  text-align: center;
-  margin: 5px;
+    font-size:24px;
+    font-weight: 450 ;
+    text-align: center;
+    margin: 5px;
     }
     .texto_lateral{
       padding: 5px 30px;
       font-size: 21px;
       text-align: left;     
     }
-}
+
+
+
+
+
+  }

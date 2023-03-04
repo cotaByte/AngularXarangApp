@@ -8,8 +8,8 @@
   <br>
   <br>
   <br>
-  <div *ngIf="token.director==true"> 
-    <button style="margin-left:12px ;" class="btn" (click)="addRequerimientoEvento()" >Añadir requerimiento</button>
+  <div style="text-align: center;" *ngIf="token.director==true"> 
+    <button class="btn" (click)="addRequerimientoEvento()" >Añadir requerimiento</button>
   </div>
   <ng-template [ngIf]="requires.length>0" [ngIfElse]="vacio">
     <div class="courses-container"  *ngFor="let  require of requires" >

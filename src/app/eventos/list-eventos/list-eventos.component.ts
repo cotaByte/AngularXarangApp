@@ -71,8 +71,6 @@ export class ListEventosComponent implements OnInit {
 
 
   verInscritos (id_evento:string){
-
-    debugger;
     this.route.navigate(['/listMiembrosByEvento',id_evento]);
   }
 }

@@ -29,6 +29,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ListRequerimientosComponent } from './requerimientos/list-requerimientos/list-requerimientos.component';
 import { AddRequerimientoComponent } from './requerimientos/add-requerimiento/add-requerimiento.component';
 import { ListMiembrosByEventoComponent } from './eventos/list-miembros-by-evento/list-miembros-by-evento.component';
+import { ListMiembrosByBandaComponent } from './miembros/list-miembros-by-banda/list-miembros-by-banda.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { ListMiembrosByEventoComponent } from './eventos/list-miembros-by-evento
     EntradaComponent,
     ListRequerimientosComponent,
     AddRequerimientoComponent,
-    ListMiembrosByEventoComponent
+    ListMiembrosByEventoComponent,
+    ListMiembrosByBandaComponent
     ],
   imports: [
     BrowserAnimationsModule,

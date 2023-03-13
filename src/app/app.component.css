@@ -156,8 +156,18 @@ word-wrap: normal;
       padding: 30px;
       flex: content;
       max-width: 150px;
+      transition: background-color 0.4s ease-in-out ;
     }
-    
+
+    .course-preview:hover {
+      background-color: #3445dd;
+      
+      color: #fff;
+      padding: 30px;
+      flex: content;
+      max-width: 150px;
+    }
+
     .course-info {    
       padding: 30px;
       position: relative;
@@ -173,6 +183,18 @@ word-wrap: normal;
       font-size: 16px;
       padding: 12px 25px;
       margin:5px 2px;
+      transition: background-color 0.4s ease-in-out ;
+    }
+    .btn:hover {
+      background-color: #3445dd;
+      border: 0;
+      border-radius: 50px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      font-size: 16px;
+      padding: 12px 25px;
+      margin:5px 2px;
+      transition: background-color 0.4s ease-in-out ;
     }
 
 .contenedor {

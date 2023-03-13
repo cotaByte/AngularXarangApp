@@ -87,4 +87,12 @@ checkToken (token:string){
   return this.http.get<any>(`${URL}/checkToken`,{headers,params});
 }
 
+getMiembrosByBanda(id_banda:string){
+  const headers = new HttpHeaders(`${headers_genericos}`);
+  const params = new HttpParams().set('id_banda',id_banda);
+  return this.http.get<any>(`${URL}/getMiembrosByBanda`,{headers,params});
+}
+
+
+
 }

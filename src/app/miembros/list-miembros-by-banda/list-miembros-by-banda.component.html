@@ -1,0 +1,37 @@
+<navbar>
+    <div class="cabecera">
+        <br>
+        <br>
+      <div class="vacio_son">
+        <h2 class="msg_vacio"> Listado de miembros de la banda <i>{{this.nombre_banda}}</i></h2>
+      </div>
+    </div>
+    <br>
+    <br>
+    <ng-template [ngIf]="miembros.length>0" [ngIfElse]="vacio">
+      <div class="courses-container"  *ngFor="let miembro of miembros" >
+        <div class="course-miembros">
+          <div class="course-preview">
+            <h6>DNI</h6>
+            <h2>{{miembro.dni}}</h2>
+          </div>
+          <div class="course-info">
+            <h6>Nombre</h6>
+            <h2>{{miembro.nombre}}  {{ miembro.apellido1 }} {{ miembro.apellido2 }}</h2>
+            <h6>Número de telefono</h6>
+            <h2>{{miembro.telefono}}</h2>
+            <h6>Instrumento</h6>
+            <h2>{{miembro.instrumento}}</h2>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #vacio>
+      <div class="vacio">
+        <div class="vacio_son">
+          <h2  class="msg_vacio">No hay miembros Inscritos en este evento</h2>
+        </div>
+      </div>
+    </ng-template>
+    </navbar>
+

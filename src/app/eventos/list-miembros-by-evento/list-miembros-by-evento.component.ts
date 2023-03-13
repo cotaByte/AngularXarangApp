@@ -28,8 +28,6 @@ export class ListMiembrosByEventoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-
     this.Utilidades.compruebaToken().then(res=>{
       this.token = res;
        if (this.id_evento)this.cargarMiembrosByEvento( this.id_evento);
@@ -41,10 +39,8 @@ export class ListMiembrosByEventoComponent implements OnInit {
     
     this.eventosServices.getMiembrosByEvento( id_evento).subscribe(
       (res) => {
-        debugger;
         this.miembros = res.data;
         this.nombre_evento = res.nombre_evento.nombre;
-        console.log(this.nombre_evento);
       },
       (err) => {
         console.table(err);

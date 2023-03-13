@@ -4,6 +4,7 @@ import { BandasService } from 'src/app/services/bandas.service';
 import {TOKEN} from 'src/app/app.constants';
 import {Router } from '@angular/router';
 import { Utilidades } from 'src/app/app.utilidades';
+import { Token } from 'src/app/models/token';
 
 @Component({
   selector: 'app-join-bandas',
@@ -12,16 +13,23 @@ import { Utilidades } from 'src/app/app.utilidades';
 })
 export class JoinBandasComponent implements OnInit {
   bandas: Banda[] =[];
-
+  token :Token={
+    id: '',
+    nombre: '',
+    id_instrumento:0,
+    director: false
+  };
   constructor(private utilidades:Utilidades,private bandaService : BandasService, private route: Router ) { }
 
   ngOnInit(): void {
 
-     this.utilidades.compruebaToken().then(token=>{
-      if (token.id!=''){
-        this.cargarJoinBandas(token);        
-      }
-     });
+     this.utilidades.compruebaToken().then(res=>{
+      this.token=res;
+      this.cargarJoinBandas(this.token);        
+    });
+        
+      
+     
   }
  async cargarJoinBandas(token:any){
   this.bandaService.getJoinBandas(token.id).subscribe(res=>{
@@ -33,10 +41,11 @@ export class JoinBandasComponent implements OnInit {
  }
 
  joinBanda(id_banda:string){
-  let token = TOKEN.id;
+  let token = this.token.id;
+  debugger;
   this.bandaService.joinBandas(token,id_banda).subscribe(res=>{
     if(res.ok){
-      this.cargarJoinBandas(TOKEN);
+      this.cargarJoinBandas(this.token);
       return alert(res.msg);
     }else {
       alert (res.msg);

@@ -18,6 +18,7 @@ import { ListarMiembrosComponent } from './miembros/listar-miembros/listar-miemb
 import { ListRequerimientosComponent } from './requerimientos/list-requerimientos/list-requerimientos.component';
 import { AddRequerimientoComponent } from './requerimientos/add-requerimiento/add-requerimiento.component';
 import { ListMiembrosByEventoComponent } from './eventos/list-miembros-by-evento/list-miembros-by-evento.component';
+import { ListMiembrosByBandaComponent } from './miembros/list-miembros-by-banda/list-miembros-by-banda.component';
 const routes: Routes = [
   {
     path: '',
@@ -82,6 +83,10 @@ const routes: Routes = [
   {
     path: 'listMiembrosByEvento/:id_evento',
     component: ListMiembrosByEventoComponent,
+  },
+  {
+    path: 'listMiembrosByBanda/:id_banda',
+    component: ListMiembrosByBandaComponent,
   },
 
 ];

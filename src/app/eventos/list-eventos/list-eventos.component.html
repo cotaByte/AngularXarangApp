@@ -8,7 +8,7 @@
   <ng-template [ngIf]="eventos.length>0" [ngIfElse]="vacio"></ng-template>
 <div class="courses-container"  *ngFor="let evento of eventos"  >
     <div class="course-eventos">
-      <div class="course-preview"  (click)="verRequerimientos(evento.id_evento)">
+      <div class="course-preview" title="Ver requerimientos del evento {{evento.nombre}}"  (click)="verRequerimientos(evento.id_evento)">
         <h6>Evento</h6>
         <h2>{{evento.nombre}}</h2>
       </div>

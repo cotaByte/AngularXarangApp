@@ -7,7 +7,7 @@
   <ng-template  [ngIf]="bandas.length>0" [ngIfElse]="vacio">
     <div class="courses-container"  *ngFor="let banda of bandas" >
       <div class="course">
-        <div class="course-preview">
+        <div class="course-preview" title="Ver Miembros de la banda {{banda.nombre}}" (click)="verMiembros(banda.id_banda)">
         </div>
         <div class="course-info">
           <h6>Nombre de la Banda</h6>

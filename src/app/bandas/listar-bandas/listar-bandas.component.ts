@@ -4,7 +4,7 @@ import { Utilidades } from 'src/app/app.utilidades';
 import { Banda } from 'src/app/models/banda';
 import { Token } from 'src/app/models/token';
 import { BandasService } from 'src/app/services/bandas.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-listar-bandas',
   templateUrl: './listar-bandas.component.html',
@@ -21,7 +21,8 @@ export class ListarBandasComponent implements OnInit {
   };
   constructor(
     private bandaService: BandasService,
-    private utilidades: Utilidades
+    private utilidades: Utilidades,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -56,6 +57,10 @@ export class ListarBandasComponent implements OnInit {
       );
     }
     
+  }
+
+  verMiembros(id_banda:string){
+    this.router.navigate(['listMiembrosByBanda', id_banda]);
   }
 
 }

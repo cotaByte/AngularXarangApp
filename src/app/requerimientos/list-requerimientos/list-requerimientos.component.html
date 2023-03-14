@@ -23,7 +23,7 @@
           <h2>{{require.actual}} / {{require.max}}</h2>
           <section class="botonera-lista">    
             <div class="botonera-lista--forma">
-              <button class="btn" *ngIf="token.director ==true" (click)="removeRequire(require.id_require)">Eliminame</button>
+              <button class="btn" *ngIf="token.director ==true" (click)="removeRequire(require.id_require)">Eliminar</button>
               <button class="btn" *ngIf="inscrito!=true && token.id_instrumento==require.id_instrumento"  (click)="inscribeToEvento(require.id_require)"> Inscribirse</button> 
               <button class="btn" *ngIf="inscrito==true && token.id_instrumento==require.id_instrumento"  (click)="desinscribe2Event(require.id_require)"> Desinscribirse</button> 
             </div>

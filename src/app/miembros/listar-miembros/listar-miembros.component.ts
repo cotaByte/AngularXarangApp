@@ -28,8 +28,9 @@ export class ListarMiembrosComponent implements OnInit {
   }
 
 
-  async cargarMiembros(token:string) {
-    this.miembroServices.getMiembros(token).subscribe(
+  async cargarMiembros(token_id:string) {
+
+    this.miembroServices.getMiembros(token_id).subscribe(
       (res) => {
         this.miembros = res;
 

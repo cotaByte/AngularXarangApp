@@ -29,7 +29,6 @@ export class AddMiembrosComponent implements OnInit {
 
    }
   ngOnInit(): void {
-  /* this.token  = this.utilidades.compruebaToken(); */
   this.utilidades.compruebaToken().then(res=>{
     console.table(res);
     this.token= res;
@@ -37,14 +36,14 @@ export class AddMiembrosComponent implements OnInit {
   }
 
   addMiembro(data: any) {
-    debugger;
     let res = this.utilidades.compruebaFormulario(data);
     if (!res.ok) alert (res.msg);
     let dniValido= this.utilidades.compruebaLetraDNI(data.dni);
     if (!dniValido) return alert ("La letra introducida para el digito del DNI no es válida");
     //TODO: Añadir el checkbox para poder decidir si es un director o no. (solo los directores,q llevan D en el token pueden verlo)
     data.director = this.esDirector;
-    
+    data.pwd= this.utilidades.encriptaPassword(data.pwd);
+
     this.miembroServices.addMiembros(data.dni,data.nombre, data.apellido1, data.apellido2,data.instrumento, data.telefono,
        data.director,data.pwd)
     .subscribe(res =>{

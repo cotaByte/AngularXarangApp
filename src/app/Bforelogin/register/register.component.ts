@@ -25,9 +25,12 @@ export class RegisterComponent implements OnInit {
     if (!res.ok) alert (res.msg);
     //TODO: Añadir el checkbox para poder decidir si es un director o no. (solo los directores,q llevan D en el token pueden verlo)
     if (!data.director)  data.director = false;
+    let dniValido= this.utilidades.compruebaLetraDNI(data.dni);
+    if (!dniValido) return alert ("La letra introducida para el digito del DNI no es válida");
+    data.pwd= this.utilidades.encriptaPassword(data.pwd);
 
-    this.miembroService.addMiembros(data.nif,data.nombre, data.apellido1, data.apellido2,data.instrumento, data.telefono,
-       data.director,data.pwd)
+    this.miembroService.addMiembros(data.dni,data.nombre, data.apellido1, data.apellido2,data.instrumento, data.telefono,
+       data.director,data.pwd)  
     .subscribe(res =>{
       if (res.ok){
         var resetForm = <HTMLFormElement>document.getElementById('registerForm');

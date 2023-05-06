@@ -35,7 +35,6 @@ export class AddRequerimientoComponent implements OnInit {
   }
 
   addRequerimiento(data:any){
-    debugger;
     let res= this.Utilidades.compruebaFormulario(data);
     if (res.ok==false) return alert (res.msg);
     if(data.maxRequires>5) return alert("No puedes crear un require de más de 5 solicitantes");

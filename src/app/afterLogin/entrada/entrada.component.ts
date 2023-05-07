@@ -21,7 +21,7 @@ export class EntradaComponent implements OnInit {
   constructor(private utilidades: Utilidades, private route:Router , private eventosService:EventosService) { }
 
   ngOnInit(): void {
-    
+    debugger;
     this.utilidades.compruebaToken().then(res=>{
       this.token= res;
       this.cargarEventosByMiembro(this.token.id);

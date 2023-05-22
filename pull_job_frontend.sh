@@ -1,6 +1,9 @@
 #!/bin/bash
+echo $0
+pwd
+cd `dirname $0`
 echo "==========================================================================="
-echo "actualizando repositorio frontend=> $(date)";
+echo "actualizando repositorio backend => $(date)";
 git pull -v --rebase
-echo "repositorio frontend actualizado => $(date)";
+echo "repositorio backend actualizado => $(date)";
 echo "==========================================================================="
